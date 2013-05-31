@@ -1,0 +1,3126 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET client_encoding = 'SQL_ASCII';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET escape_string_warning = off;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: auth_group; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE auth_group (
+    id integer NOT NULL,
+    name character varying(80) NOT NULL
+);
+
+
+ALTER TABLE public.auth_group OWNER TO postgres;
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE auth_group_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_id_seq OWNER TO postgres;
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE auth_group_id_seq OWNED BY auth_group.id;
+
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('auth_group_id_seq', 1, false);
+
+
+--
+-- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE auth_group_permissions (
+    id integer NOT NULL,
+    group_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_group_permissions OWNER TO postgres;
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE auth_group_permissions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO postgres;
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE auth_group_permissions_id_seq OWNED BY auth_group_permissions.id;
+
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('auth_group_permissions_id_seq', 1, false);
+
+
+--
+-- Name: auth_message; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE auth_message (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    message text NOT NULL
+);
+
+
+ALTER TABLE public.auth_message OWNER TO postgres;
+
+--
+-- Name: auth_message_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE auth_message_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_message_id_seq OWNER TO postgres;
+
+--
+-- Name: auth_message_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE auth_message_id_seq OWNED BY auth_message.id;
+
+
+--
+-- Name: auth_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('auth_message_id_seq', 3, true);
+
+
+--
+-- Name: auth_permission; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE auth_permission (
+    id integer NOT NULL,
+    name character varying(50) NOT NULL,
+    content_type_id integer NOT NULL,
+    codename character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.auth_permission OWNER TO postgres;
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE auth_permission_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_permission_id_seq OWNER TO postgres;
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE auth_permission_id_seq OWNED BY auth_permission.id;
+
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('auth_permission_id_seq', 100, false);
+
+
+--
+-- Name: auth_user; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE auth_user (
+    id integer NOT NULL,
+    username character varying(30) NOT NULL,
+    first_name character varying(30) NOT NULL,
+    last_name character varying(30) NOT NULL,
+    email character varying(75) NOT NULL,
+    password character varying(128) NOT NULL,
+    is_staff boolean NOT NULL,
+    is_active boolean NOT NULL,
+    is_superuser boolean NOT NULL,
+    last_login timestamp without time zone NOT NULL,
+    date_joined timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.auth_user OWNER TO postgres;
+
+--
+-- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE auth_user_groups (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    group_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_user_groups OWNER TO postgres;
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE auth_user_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_groups_id_seq OWNER TO postgres;
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE auth_user_groups_id_seq OWNED BY auth_user_groups.id;
+
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('auth_user_groups_id_seq', 1, false);
+
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE auth_user_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_id_seq OWNER TO postgres;
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE auth_user_id_seq OWNED BY auth_user.id;
+
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('auth_user_id_seq', 5, false);
+
+
+--
+-- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE auth_user_user_permissions (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_user_user_permissions OWNER TO postgres;
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE auth_user_user_permissions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO postgres;
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE auth_user_user_permissions_id_seq OWNED BY auth_user_user_permissions.id;
+
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('auth_user_user_permissions_id_seq', 1, false);
+
+
+--
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE django_admin_log (
+    id integer NOT NULL,
+    action_time timestamp without time zone NOT NULL,
+    user_id integer NOT NULL,
+    content_type_id integer,
+    object_id text,
+    object_repr character varying(200) NOT NULL,
+    action_flag integer NOT NULL,
+    change_message text NOT NULL
+);
+
+
+ALTER TABLE public.django_admin_log OWNER TO postgres;
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE django_admin_log_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_admin_log_id_seq OWNER TO postgres;
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
+
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('django_admin_log_id_seq', 1, false);
+
+
+--
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE django_content_type (
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    app_label character varying(100) NOT NULL,
+    model character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.django_content_type OWNER TO postgres;
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE django_content_type_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_content_type_id_seq OWNER TO postgres;
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE django_content_type_id_seq OWNED BY django_content_type.id;
+
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('django_content_type_id_seq', 34, false);
+
+
+--
+-- Name: django_session; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE django_session (
+    session_key character varying(40) NOT NULL,
+    session_data text NOT NULL,
+    expire_date timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_session OWNER TO postgres;
+
+--
+-- Name: django_site; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE django_site (
+    id integer NOT NULL,
+    domain character varying(100) NOT NULL,
+    name character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.django_site OWNER TO postgres;
+
+--
+-- Name: django_site_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE django_site_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_site_id_seq OWNER TO postgres;
+
+--
+-- Name: django_site_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE django_site_id_seq OWNED BY django_site.id;
+
+
+--
+-- Name: django_site_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('django_site_id_seq', 2, false);
+
+
+--
+-- Name: forum_action; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_action (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    real_user_id integer,
+    ip character varying(16) NOT NULL,
+    node_id integer,
+    action_type character varying(16) NOT NULL,
+    action_date timestamp without time zone NOT NULL,
+    extra text,
+    canceled boolean NOT NULL,
+    canceled_by_id integer,
+    canceled_at timestamp without time zone,
+    canceled_ip character varying(16) NOT NULL
+);
+
+
+ALTER TABLE public.forum_action OWNER TO postgres;
+
+--
+-- Name: forum_action_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_action_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_action_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_action_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_action_id_seq OWNED BY forum_action.id;
+
+
+--
+-- Name: forum_action_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_action_id_seq', 43, true);
+
+
+--
+-- Name: forum_actionrepute; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_actionrepute (
+    id integer NOT NULL,
+    action_id integer NOT NULL,
+    by_canceled boolean DEFAULT false NOT NULL,
+    value integer DEFAULT 0 NOT NULL,
+    user_id integer NOT NULL,
+    date timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.forum_actionrepute OWNER TO postgres;
+
+--
+-- Name: forum_actionrepute_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_actionrepute_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_actionrepute_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_actionrepute_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_actionrepute_id_seq OWNED BY forum_actionrepute.id;
+
+
+--
+-- Name: forum_actionrepute_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_actionrepute_id_seq', 3, false);
+
+
+--
+-- Name: forum_authkeyuserassociation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_authkeyuserassociation (
+    id integer NOT NULL,
+    added_at timestamp without time zone DEFAULT '2013-02-05 20:44:02'::timestamp without time zone NOT NULL,
+    user_id integer NOT NULL,
+    key character varying(255) NOT NULL,
+    provider character varying(64) NOT NULL
+);
+
+
+ALTER TABLE public.forum_authkeyuserassociation OWNER TO postgres;
+
+--
+-- Name: forum_authkeyuserassociation_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_authkeyuserassociation_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_authkeyuserassociation_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_authkeyuserassociation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_authkeyuserassociation_id_seq OWNED BY forum_authkeyuserassociation.id;
+
+
+--
+-- Name: forum_authkeyuserassociation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_authkeyuserassociation_id_seq', 1, false);
+
+
+--
+-- Name: forum_award; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_award (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    badge_id integer NOT NULL,
+    node_id integer,
+    awarded_at timestamp without time zone NOT NULL,
+    trigger_id integer,
+    action_id integer NOT NULL
+);
+
+
+ALTER TABLE public.forum_award OWNER TO postgres;
+
+--
+-- Name: forum_award_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_award_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_award_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_award_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_award_id_seq OWNED BY forum_award.id;
+
+
+--
+-- Name: forum_award_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_award_id_seq', 3, false);
+
+
+--
+-- Name: forum_badge; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_badge (
+    id integer NOT NULL,
+    awarded_count integer DEFAULT 0 NOT NULL,
+    type integer NOT NULL,
+    cls character varying(50)
+);
+
+
+ALTER TABLE public.forum_badge OWNER TO postgres;
+
+--
+-- Name: forum_badge_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_badge_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_badge_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_badge_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_badge_id_seq OWNED BY forum_badge.id;
+
+
+--
+-- Name: forum_badge_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_badge_id_seq', 32, false);
+
+
+--
+-- Name: forum_flag; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_flag (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    node_id integer NOT NULL,
+    reason character varying(300) NOT NULL,
+    action_id integer NOT NULL,
+    flagged_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.forum_flag OWNER TO postgres;
+
+--
+-- Name: forum_flag_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_flag_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_flag_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_flag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_flag_id_seq OWNED BY forum_flag.id;
+
+
+--
+-- Name: forum_flag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_flag_id_seq', 1, false);
+
+
+--
+-- Name: forum_keyvalue; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_keyvalue (
+    id integer NOT NULL,
+    value text,
+    key character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.forum_keyvalue OWNER TO postgres;
+
+--
+-- Name: forum_keyvalue_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_keyvalue_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_keyvalue_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_keyvalue_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_keyvalue_id_seq OWNED BY forum_keyvalue.id;
+
+
+--
+-- Name: forum_keyvalue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_keyvalue_id_seq', 168, true);
+
+
+--
+-- Name: forum_markedtag; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_markedtag (
+    id integer NOT NULL,
+    tag_id integer NOT NULL,
+    user_id integer NOT NULL,
+    reason character varying(16) NOT NULL
+);
+
+
+ALTER TABLE public.forum_markedtag OWNER TO postgres;
+
+--
+-- Name: forum_markedtag_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_markedtag_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_markedtag_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_markedtag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_markedtag_id_seq OWNED BY forum_markedtag.id;
+
+
+--
+-- Name: forum_markedtag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_markedtag_id_seq', 1, false);
+
+
+--
+-- Name: forum_node; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_node (
+    id integer NOT NULL,
+    title character varying(300) NOT NULL,
+    tagnames character varying(125) NOT NULL,
+    author_id integer NOT NULL,
+    body text NOT NULL,
+    node_type character varying(16) NOT NULL,
+    parent_id integer,
+    abs_parent_id integer,
+    added_at timestamp without time zone NOT NULL,
+    score integer NOT NULL,
+    state_string text NOT NULL,
+    last_edited_id integer,
+    last_activity_by_id integer,
+    last_activity_at timestamp without time zone,
+    active_revision_id integer,
+    extra text,
+    extra_ref_id integer,
+    extra_count integer NOT NULL,
+    marked boolean NOT NULL
+);
+
+
+ALTER TABLE public.forum_node OWNER TO postgres;
+
+--
+-- Name: forum_node_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_node_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_node_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_node_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_node_id_seq OWNED BY forum_node.id;
+
+
+--
+-- Name: forum_node_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_node_id_seq', 27, true);
+
+
+--
+-- Name: forum_node_tags; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_node_tags (
+    id integer NOT NULL,
+    node_id integer NOT NULL,
+    tag_id integer NOT NULL
+);
+
+
+ALTER TABLE public.forum_node_tags OWNER TO postgres;
+
+--
+-- Name: forum_node_tags_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_node_tags_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_node_tags_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_node_tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_node_tags_id_seq OWNED BY forum_node_tags.id;
+
+
+--
+-- Name: forum_node_tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_node_tags_id_seq', 12, true);
+
+
+--
+-- Name: forum_noderevision; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_noderevision (
+    id integer NOT NULL,
+    node_id integer NOT NULL,
+    body text NOT NULL,
+    author_id integer NOT NULL,
+    tagnames character varying(125) NOT NULL,
+    title character varying(300) NOT NULL,
+    summary character varying(300) NOT NULL,
+    revised_at timestamp without time zone NOT NULL,
+    revision integer NOT NULL
+);
+
+
+ALTER TABLE public.forum_noderevision OWNER TO postgres;
+
+--
+-- Name: forum_noderevision_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_noderevision_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_noderevision_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_noderevision_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_noderevision_id_seq OWNED BY forum_noderevision.id;
+
+
+--
+-- Name: forum_noderevision_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_noderevision_id_seq', 29, true);
+
+
+--
+-- Name: forum_nodestate; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_nodestate (
+    id integer NOT NULL,
+    node_id integer NOT NULL,
+    state_type character varying(16) NOT NULL,
+    action_id integer NOT NULL
+);
+
+
+ALTER TABLE public.forum_nodestate OWNER TO postgres;
+
+--
+-- Name: forum_nodestate_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_nodestate_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_nodestate_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_nodestate_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_nodestate_id_seq OWNED BY forum_nodestate.id;
+
+
+--
+-- Name: forum_nodestate_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_nodestate_id_seq', 4, true);
+
+
+--
+-- Name: forum_openidassociation; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_openidassociation (
+    id integer NOT NULL,
+    server_url text NOT NULL,
+    handle character varying(255) NOT NULL,
+    secret text NOT NULL,
+    issued integer NOT NULL,
+    lifetime integer NOT NULL,
+    assoc_type text NOT NULL
+);
+
+
+ALTER TABLE public.forum_openidassociation OWNER TO postgres;
+
+--
+-- Name: forum_openidassociation_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_openidassociation_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_openidassociation_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_openidassociation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_openidassociation_id_seq OWNED BY forum_openidassociation.id;
+
+
+--
+-- Name: forum_openidassociation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_openidassociation_id_seq', 2, false);
+
+
+--
+-- Name: forum_openidnonce; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_openidnonce (
+    id integer NOT NULL,
+    server_url character varying(200) NOT NULL,
+    "timestamp" integer NOT NULL,
+    salt character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.forum_openidnonce OWNER TO postgres;
+
+--
+-- Name: forum_openidnonce_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_openidnonce_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_openidnonce_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_openidnonce_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_openidnonce_id_seq OWNED BY forum_openidnonce.id;
+
+
+--
+-- Name: forum_openidnonce_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_openidnonce_id_seq', 2, false);
+
+
+--
+-- Name: forum_questionsubscription; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_questionsubscription (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    question_id integer NOT NULL,
+    auto_subscription boolean NOT NULL,
+    last_view timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.forum_questionsubscription OWNER TO postgres;
+
+--
+-- Name: forum_questionsubscription_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_questionsubscription_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_questionsubscription_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_questionsubscription_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_questionsubscription_id_seq OWNED BY forum_questionsubscription.id;
+
+
+--
+-- Name: forum_questionsubscription_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_questionsubscription_id_seq', 11, true);
+
+
+--
+-- Name: forum_subscriptionsettings; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_subscriptionsettings (
+    id integer NOT NULL,
+    questions_viewed boolean DEFAULT false NOT NULL,
+    notify_comments boolean DEFAULT false NOT NULL,
+    new_question character varying(1) DEFAULT 'd'::character varying NOT NULL,
+    all_questions boolean DEFAULT false NOT NULL,
+    new_question_watched_tags character varying(1) DEFAULT 'i'::character varying NOT NULL,
+    notify_comments_own_post boolean DEFAULT true NOT NULL,
+    subscribed_questions character varying(1) DEFAULT 'i'::character varying NOT NULL,
+    notify_reply_to_comments boolean DEFAULT true NOT NULL,
+    member_joins character varying(1) DEFAULT 'n'::character varying NOT NULL,
+    user_id integer NOT NULL,
+    notify_answers boolean DEFAULT true NOT NULL,
+    enable_notifications boolean DEFAULT true NOT NULL,
+    all_questions_watched_tags boolean DEFAULT false NOT NULL,
+    notify_accepted boolean DEFAULT false NOT NULL,
+    send_digest boolean NOT NULL
+);
+
+
+ALTER TABLE public.forum_subscriptionsettings OWNER TO postgres;
+
+--
+-- Name: forum_subscriptionsettings_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_subscriptionsettings_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_subscriptionsettings_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_subscriptionsettings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_subscriptionsettings_id_seq OWNED BY forum_subscriptionsettings.id;
+
+
+--
+-- Name: forum_subscriptionsettings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_subscriptionsettings_id_seq', 3, false);
+
+
+--
+-- Name: forum_tag; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_tag (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL,
+    created_by_id integer NOT NULL,
+    created_at timestamp without time zone,
+    used_count integer NOT NULL
+);
+
+
+ALTER TABLE public.forum_tag OWNER TO postgres;
+
+--
+-- Name: forum_tag_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_tag_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_tag_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_tag_id_seq OWNED BY forum_tag.id;
+
+
+--
+-- Name: forum_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_tag_id_seq', 13, false);
+
+
+--
+-- Name: forum_user; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_user (
+    user_ptr_id integer NOT NULL,
+    is_approved boolean NOT NULL,
+    email_isvalid boolean NOT NULL,
+    reputation integer NOT NULL,
+    gold integer NOT NULL,
+    silver integer NOT NULL,
+    bronze integer NOT NULL,
+    last_seen timestamp without time zone NOT NULL,
+    real_name character varying(100) NOT NULL,
+    website character varying(200) NOT NULL,
+    location character varying(100) NOT NULL,
+    date_of_birth date,
+    about text NOT NULL
+);
+
+
+ALTER TABLE public.forum_user OWNER TO postgres;
+
+--
+-- Name: forum_userproperty; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_userproperty (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    key character varying(16) NOT NULL,
+    value text
+);
+
+
+ALTER TABLE public.forum_userproperty OWNER TO postgres;
+
+--
+-- Name: forum_userproperty_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_userproperty_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_userproperty_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_userproperty_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_userproperty_id_seq OWNED BY forum_userproperty.id;
+
+
+--
+-- Name: forum_userproperty_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_userproperty_id_seq', 4, false);
+
+
+--
+-- Name: forum_validationhash; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_validationhash (
+    id integer NOT NULL,
+    hash_code character varying(255) NOT NULL,
+    seed character varying(12) NOT NULL,
+    expiration timestamp without time zone DEFAULT '2010-04-07 14:36:23'::timestamp without time zone NOT NULL,
+    type character varying(12) NOT NULL,
+    user_id integer NOT NULL
+);
+
+
+ALTER TABLE public.forum_validationhash OWNER TO postgres;
+
+--
+-- Name: forum_validationhash_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_validationhash_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_validationhash_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_validationhash_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_validationhash_id_seq OWNED BY forum_validationhash.id;
+
+
+--
+-- Name: forum_validationhash_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_validationhash_id_seq', 6, false);
+
+
+--
+-- Name: forum_vote; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE forum_vote (
+    id integer NOT NULL,
+    node_id integer NOT NULL,
+    action_id integer NOT NULL,
+    value integer NOT NULL,
+    user_id integer NOT NULL,
+    voted_at timestamp without time zone DEFAULT '2013-02-05 20:44:56'::timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.forum_vote OWNER TO postgres;
+
+--
+-- Name: forum_vote_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE forum_vote_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.forum_vote_id_seq OWNER TO postgres;
+
+--
+-- Name: forum_vote_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE forum_vote_id_seq OWNED BY forum_vote.id;
+
+
+--
+-- Name: forum_vote_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('forum_vote_id_seq', 1, false);
+
+
+--
+-- Name: south_migrationhistory; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE south_migrationhistory (
+    id integer NOT NULL,
+    app_name character varying(255) NOT NULL,
+    migration character varying(255) NOT NULL,
+    applied timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.south_migrationhistory OWNER TO postgres;
+
+--
+-- Name: south_migrationhistory_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE south_migrationhistory_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.south_migrationhistory_id_seq OWNER TO postgres;
+
+--
+-- Name: south_migrationhistory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE south_migrationhistory_id_seq OWNED BY south_migrationhistory.id;
+
+
+--
+-- Name: south_migrationhistory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('south_migrationhistory_id_seq', 49, false);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY auth_group ALTER COLUMN id SET DEFAULT nextval('auth_group_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('auth_group_permissions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY auth_message ALTER COLUMN id SET DEFAULT nextval('auth_message_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY auth_permission ALTER COLUMN id SET DEFAULT nextval('auth_permission_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY auth_user ALTER COLUMN id SET DEFAULT nextval('auth_user_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY auth_user_groups ALTER COLUMN id SET DEFAULT nextval('auth_user_groups_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY auth_user_user_permissions ALTER COLUMN id SET DEFAULT nextval('auth_user_user_permissions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY django_admin_log ALTER COLUMN id SET DEFAULT nextval('django_admin_log_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY django_content_type ALTER COLUMN id SET DEFAULT nextval('django_content_type_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY django_site ALTER COLUMN id SET DEFAULT nextval('django_site_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_action ALTER COLUMN id SET DEFAULT nextval('forum_action_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_actionrepute ALTER COLUMN id SET DEFAULT nextval('forum_actionrepute_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_authkeyuserassociation ALTER COLUMN id SET DEFAULT nextval('forum_authkeyuserassociation_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_award ALTER COLUMN id SET DEFAULT nextval('forum_award_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_badge ALTER COLUMN id SET DEFAULT nextval('forum_badge_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_flag ALTER COLUMN id SET DEFAULT nextval('forum_flag_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_keyvalue ALTER COLUMN id SET DEFAULT nextval('forum_keyvalue_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_markedtag ALTER COLUMN id SET DEFAULT nextval('forum_markedtag_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_node ALTER COLUMN id SET DEFAULT nextval('forum_node_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_node_tags ALTER COLUMN id SET DEFAULT nextval('forum_node_tags_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_noderevision ALTER COLUMN id SET DEFAULT nextval('forum_noderevision_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_nodestate ALTER COLUMN id SET DEFAULT nextval('forum_nodestate_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_openidassociation ALTER COLUMN id SET DEFAULT nextval('forum_openidassociation_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_openidnonce ALTER COLUMN id SET DEFAULT nextval('forum_openidnonce_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_questionsubscription ALTER COLUMN id SET DEFAULT nextval('forum_questionsubscription_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_subscriptionsettings ALTER COLUMN id SET DEFAULT nextval('forum_subscriptionsettings_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_tag ALTER COLUMN id SET DEFAULT nextval('forum_tag_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_userproperty ALTER COLUMN id SET DEFAULT nextval('forum_userproperty_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_validationhash ALTER COLUMN id SET DEFAULT nextval('forum_validationhash_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY forum_vote ALTER COLUMN id SET DEFAULT nextval('forum_vote_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY south_migrationhistory ALTER COLUMN id SET DEFAULT nextval('south_migrationhistory_id_seq'::regclass);
+
+
+--
+-- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY auth_group (id, name) FROM stdin;
+\.
+
+
+--
+-- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY auth_group_permissions (id, group_id, permission_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: auth_message; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY auth_message (id, user_id, message) FROM stdin;
+\.
+
+
+--
+-- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY auth_permission (id, name, content_type_id, codename) FROM stdin;
+1	Can add permission	1	add_permission
+2	Can change permission	1	change_permission
+3	Can delete permission	1	delete_permission
+4	Can add group	2	add_group
+5	Can change group	2	change_group
+6	Can delete group	2	delete_group
+7	Can add user	3	add_user
+8	Can change user	3	change_user
+9	Can delete user	3	delete_user
+10	Can add message	4	add_message
+11	Can change message	4	change_message
+12	Can delete message	4	delete_message
+13	Can add content type	5	add_contenttype
+14	Can change content type	5	change_contenttype
+15	Can delete content type	5	delete_contenttype
+16	Can add session	6	add_session
+17	Can change session	6	change_session
+18	Can delete session	6	delete_session
+19	Can add site	7	add_site
+20	Can change site	7	change_site
+21	Can delete site	7	delete_site
+22	Can add log entry	8	add_logentry
+23	Can change log entry	8	change_logentry
+24	Can delete log entry	8	delete_logentry
+25	Can add key value	9	add_keyvalue
+26	Can change key value	9	change_keyvalue
+27	Can delete key value	9	delete_keyvalue
+28	Can add user	10	add_user
+29	Can change user	10	change_user
+30	Can delete user	10	delete_user
+31	Can add user property	11	add_userproperty
+32	Can change user property	11	change_userproperty
+33	Can delete user property	11	delete_userproperty
+34	Can add subscription settings	12	add_subscriptionsettings
+35	Can change subscription settings	12	change_subscriptionsettings
+36	Can delete subscription settings	12	delete_subscriptionsettings
+37	Can add validation hash	13	add_validationhash
+38	Can change validation hash	13	change_validationhash
+39	Can delete validation hash	13	delete_validationhash
+40	Can add auth key user association	14	add_authkeyuserassociation
+41	Can change auth key user association	14	change_authkeyuserassociation
+42	Can delete auth key user association	14	delete_authkeyuserassociation
+43	Can add tag	15	add_tag
+44	Can change tag	15	change_tag
+45	Can delete tag	15	delete_tag
+46	Can add marked tag	16	add_markedtag
+47	Can change marked tag	16	change_markedtag
+48	Can delete marked tag	16	delete_markedtag
+49	Can add node	17	add_node
+50	Can change node	17	change_node
+51	Can delete node	17	delete_node
+52	Can add node revision	18	add_noderevision
+53	Can change node revision	18	change_noderevision
+54	Can delete node revision	18	delete_noderevision
+55	Can add node state	19	add_nodestate
+56	Can change node state	19	change_nodestate
+57	Can delete node state	19	delete_nodestate
+58	Can add action	20	add_action
+59	Can change action	20	change_action
+60	Can delete action	20	delete_action
+61	Can add action repute	21	add_actionrepute
+62	Can change action repute	21	change_actionrepute
+63	Can delete action repute	21	delete_actionrepute
+64	Can add question	17	add_question
+65	Can change question	17	change_question
+66	Can delete question	17	delete_question
+67	Can add question subscription	22	add_questionsubscription
+68	Can change question subscription	22	change_questionsubscription
+69	Can delete question subscription	22	delete_questionsubscription
+70	Can add answer	17	add_answer
+71	Can change answer	17	change_answer
+72	Can delete answer	17	delete_answer
+73	Can add comment	17	add_comment
+74	Can change comment	17	change_comment
+75	Can delete comment	17	delete_comment
+76	Can add vote	23	add_vote
+77	Can change vote	23	change_vote
+78	Can delete vote	23	delete_vote
+79	Can add flag	24	add_flag
+80	Can change flag	24	change_flag
+81	Can delete flag	24	delete_flag
+82	Can add badge	25	add_badge
+83	Can change badge	25	change_badge
+84	Can delete badge	25	delete_badge
+85	Can add award	26	add_award
+86	Can change award	26	change_award
+87	Can delete award	26	delete_award
+88	Can add page	17	add_page
+89	Can change page	17	change_page
+90	Can delete page	17	delete_page
+91	Can add open id nonce	27	add_openidnonce
+92	Can change open id nonce	27	change_openidnonce
+93	Can delete open id nonce	27	delete_openidnonce
+94	Can add open id association	28	add_openidassociation
+95	Can change open id association	28	change_openidassociation
+96	Can delete open id association	28	delete_openidassociation
+97	Can add migration history	33	add_migrationhistory
+98	Can change migration history	33	change_migrationhistory
+99	Can delete migration history	33	delete_migrationhistory
+\.
+
+
+--
+-- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY auth_user (id, username, first_name, last_name, email, password, is_staff, is_active, is_superuser, last_login, date_joined) FROM stdin;
+1	kkrampis			kkrampis@jcvi.org	sha1$29449$d2797607c39fc49e2f050a6bc7f073f08b440204	t	t	t	2013-01-24 01:51:27.379811	2013-01-24 01:51:27.379811
+4	cloudgsc			cloudgsc@gmail.com	sha1$9b9dd$d85489f99d0e2e5d1fa466a3db5c4f6c66e957ac	f	t	t	2013-02-20 17:03:48.49178	2013-02-20 17:02:36.442617
+2	rsanka			rsanka@jcvi.org	sha1$733bf$16d8b54b5faa7a270eaea5d0bda2bb2bc177fb72	t	t	t	2013-05-02 16:48:39.514792	2013-01-25 16:51:31.125434
+3	agbiotec			agbiotec@gmail.com	sha1$2ff6f$669e2be1e1c3f119f05203125c2a9235258671a8	f	t	t	2013-05-29 15:14:55.92092	2013-02-12 17:17:32.286054
+\.
+
+
+--
+-- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY auth_user_groups (id, user_id, group_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY django_admin_log (id, action_time, user_id, content_type_id, object_id, object_repr, action_flag, change_message) FROM stdin;
+\.
+
+
+--
+-- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY django_content_type (id, name, app_label, model) FROM stdin;
+1	permission	auth	permission
+2	group	auth	group
+3	user	auth	user
+4	message	auth	message
+5	content type	contenttypes	contenttype
+6	session	sessions	session
+7	site	sites	site
+8	log entry	admin	logentry
+9	key value	forum	keyvalue
+10	user	forum	user
+11	user property	forum	userproperty
+12	subscription settings	forum	subscriptionsettings
+13	validation hash	forum	validationhash
+14	auth key user association	forum	authkeyuserassociation
+15	tag	forum	tag
+16	marked tag	forum	markedtag
+17	node	forum	node
+18	node revision	forum	noderevision
+19	node state	forum	nodestate
+20	action	forum	action
+21	action repute	forum	actionrepute
+22	question subscription	forum	questionsubscription
+23	vote	forum	vote
+24	flag	forum	flag
+25	badge	forum	badge
+26	award	forum	award
+27	open id nonce	forum	openidnonce
+28	open id association	forum	openidassociation
+29	question	forum	question
+30	answer	forum	answer
+31	comment	forum	comment
+32	page	forum	page
+33	migration history	south	migrationhistory
+\.
+
+
+--
+-- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY django_session (session_key, session_data, expire_date) FROM stdin;
+0692ec0983638b2566bb0d3866ba5209	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:06:48.033982
+0c79f6af4a42de23bd281392bf569e45	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:05:32.192897
+0fc56ec3cca9155387cc48bad07a4aa5	NThmYzNkZTRhZTU4YWEyNDRkZDQ1MGVhMGRjMDM3ZmUzOWY2M2I0ZTqAAn1xAShVGHBhZ2luYXRv\ncl9RVUVTVElPTlNfTElTVH1VDW9uX3NpZ25pbl91cmxVK2h0dHA6Ly9ldmVuaW5nLWxvd2xhbmRz\nLTc1MzIuaGVyb2t1YXBwLmNvbS9VDGdyZWV0aW5nX3NldIhVEnBhZ2luYXRvcl9UQUdfTElTVH11\nLg==\n	2013-02-15 22:06:11.556325
+154956ba85e0af4b6f6d9db7fdf711a3	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:37:44.84399
+16f4b01f7b55836c6e0c495e3e4de9f2	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:22.292198
+171ff3c884094c68274f6ec13f9ceef3	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:58.063144
+18397640830b20f4121c602761a4199b	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:37:51.551747
+1863b9aade07f03514603472bfdbe81b	NmM2YTMzM2JiM2YxNGU2YjM5MjYyNTlmOWRhY2IxYWNhNTViMWNhMTqAAn1xAShVDGdyZWV0aW5n\nX3NldIhVDV9hdXRoX3VzZXJfaWSKAQJVEnBhZ2luYXRvcl9UQUdfTElTVH1VGHBhZ2luYXRvcl9R\nVUVTVElPTlNfTElTVH1VDW9uX3NpZ25pbl91cmxVOWh0dHA6Ly9ldmVuaW5nLWxvd2xhbmRzLTc1\nMzIuaGVyb2t1YXBwLmNvbS9xdWVzdGlvbnMvYXNrL1USX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFu\nZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZFUUcGFnaW5hdG9yX1VTRVJTX0xJ\nU1R9VRVsYXN0X3NlZW5faW5fcXVlc3Rpb259cQIoigEBY2RhdGV0aW1lCmRhdGV0aW1lCnEDVQoH\n3QEfCxA4AXTshVJxBIoBA2gDVQoH3QEfCxMKDBlEhVJxBYoBBWgDVQoH3QEfDDQdDqdlhVJxBooB\nB2gDVQoH3QEfDRMkAZMohVJxB3V1Lg==\n	2013-02-14 18:19:36.286291
+1bdf5e608fa489ddce295f5f575665a1	MmNjNDlhNTFkYjE1Yjc4OGM0YzJmZTgwNTI5NTZhYzM4ODFhY2E1ZjqAAn1xAShVDW9uX3NpZ25p\nbl91cmxVH2h0dHA6Ly9nc2MtY2xvdWQuaGVyb2t1YXBwLmNvbS9VDGdyZWV0aW5nX3NldIhVGHBh\nZ2luYXRvcl9RVUVTVElPTlNfTElTVH1VE2ZvcmNlX2VtYWlsX3JlcXVlc3SIVRJfYXV0aF91c2Vy\nX2JhY2tlbmRVKWRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kVQ1fYXV0\naF91c2VyX2lkSwJVFWxhc3Rfc2Vlbl9pbl9xdWVzdGlvbn1xAksJY2RhdGV0aW1lCmRhdGV0aW1l\nCnEDVQoH3QIVDzgnDzMBhVJxBHN1Lg==\n	2013-03-07 15:56:41.702043
+1d6fd375e03f0900cc0baa1f6ad9986f	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:41:04.865015
+1fbe98b2392674d593d3cafc733cce0a	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:57.831703
+235320afe7b0f41628c9578a64f67eb2	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:34:41.237875
+25bc5be957e9e02d11065b43dd17bf69	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:03:43.429821
+2945c90635e5434e356bbf0054b68f10	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:11:14.396671
+2b689303cbcf21b69ec98b0c8ff07384	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:08:00.642199
+2cb680a863565e281edc6b3ef3e35869	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:07:25.328958
+2da8eda3b5ac269576e16fa510344c42	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:24.893833
+2e7cd79aa0d75b9dfa3a4fa0f167e913	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:07:39.293636
+345dd77ddb94ee1497047d246fb136cd	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:36.502551
+38ce5857e9443bdff12fe5d62891f9d7	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 19:50:23.213001
+39fdb6b34179bebee0d7b3b6399c6d18	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:24.390012
+3ace42d53d0a6d1bc3e3386947e6ce8a	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:50.110879
+3b71c3430570ea446ce419899d3a1c1a	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:30.12789
+488f311e4009b1e15d57062cebcc8423	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:54.30469
+4c5e2d835bbd4fcd8dc3c6f71eebcb62	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:16:21.380859
+4d240af0e07612d82547740c92ab6da8	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:02:19.297741
+4d557f4babbb27729bcfba539e159c7b	YzUwOWE3OTQzMTFmYzk0ZjM4ODA0MDI2MTNkY2E0NzYwNDk0YTg3MzqAAn1xAShVCG1lc3NhZ2Vz\ncQJdcQNYNwAAAEZpcnN0IHRpbWUgaGVyZT8gQ2hlY2sgb3V0IHRoZSA8YSBocmVmPSIvZmFxLyI+\nRkFRPC9hPiFxBGFVDGdyZWV0aW5nX3NldHEFiHUu\n	2013-03-14 20:07:24.026213
+5142b852ca48babe42f58bac3de881ea	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:19.95174
+53ea9829e2584faf92ba58235813c538	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:24.672032
+564cc01df3d1413938894fd70ea77194	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:01.714486
+5809e7463813e9f8b2d6cba7b51532b5	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:32:12.505544
+58ed41273f31d619406cadd250fc4f8e	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:07:00.770453
+59283e4a003e1380a64bdc50d6ac86eb	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:08:47.424829
+5a3f2cb76f28d161987547b0f49ceee4	MDk1MjAwMzExNzY5MTkwYTEyYWU3MjllMGEzOGQwOWJlYWEzN2FmMDqAAn1xAShVGHBhZ2luYXRv\ncl9RVUVTVElPTlNfTElTVH1VDGdyZWV0aW5nX3NldHECiHUu\n	2013-02-17 23:04:37.887127
+5d2db1235e2ebe51c27b78e827ca9062	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:55.42478
+5eaa275e02276c62d209559b1bf17148	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:13.482667
+5f992a5e52d165bdc6ad99b34c747bda	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:11:16.195788
+612c7ad824321038f9bdf48eb02648f6	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:38:33.48543
+657822236b588df1e0210192655cb65a	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:27.183115
+666e82e6f398b3506cc1f1f446c51962	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:05:54.91759
+66a8d5638789656e4f4807c781913bb0	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:08:55.528918
+69ef4daa7f8a9c91a3b5abb7e7242f69	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:34:29.409585
+6ba01fe5529d7c93e87edc7230122468	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:59.952709
+6e036dec0f43ef9175d77b5090a3a018	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:11:12.284418
+701408d30cb9e91e96d200d6537f926b	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:32:31.678047
+72a3587cc3147aa9b5f324211828e3c0	MmYzYWNmMzBjNTk1M2Y4YzRlYzZiNTdjNDdhZTI4OTg5M2QzYzc5YjqAAn1xAShVDW9uX3NpZ25p\nbl91cmxVH2h0dHA6Ly9nc2MtY2xvdWQuaGVyb2t1YXBwLmNvbS9VEl9hdXRoX3VzZXJfYmFja2Vu\nZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxAlUNX2F1dGhfdXNl\ncl9pZIoBBFUYcGFnaW5hdG9yX1FVRVNUSU9OU19MSVNUfVUMZ3JlZXRpbmdfc2V0iHUu\n	2013-03-06 17:03:48.615991
+7a66a7ad3b81bd6b39dd0b22f2d8dac9	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:08:09.651504
+7a77d501ab7d652c8f7c1c25b8fa5f76	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:15.076861
+7a89faa94c9af25bf7b5f582e3b1b8fd	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:11:08.705836
+7b03ec7ebe2d4059816b15ca6bb9bfe4	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:38:18.826223
+80a038e536be53f800f14797c72bdb28	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 19:50:07.58493
+82a3375407e009786730c082754f2caf	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:46.067504
+8442e34a68f34d1085ffe31555338c8f	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:18.345031
+84ba2ce8baf9f1f9ca4027bfbc16806b	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:06:44.15365
+89fff0e46f0c2f4576aae1c123276cf6	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:26.560193
+8e0e672fd498d5b9b3c939e069bba954	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:10.781301
+8ee1e3ff95780d8020fdd35f4927c139	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:07.377198
+938a797a16029e323dbdff4acebe82b3	ZTdkYWUxZWNmMWYyOWQ1ZTZiNzllYmIyOWE4ZGU2YmIzOTZkNGYwYzqAAn1xAShVDV9hdXRoX3Vz\nZXJfaWRLAlUMZ3JlZXRpbmdfc2V0iFUSX2F1dGhfdXNlcl9iYWNrZW5kVSlkamFuZ28uY29udHJp\nYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZFUNb25fc2lnbmluX3VybFUfaHR0cDovL2dzYy1j\nbG91ZC5oZXJva3VhcHAuY29tL1UVbGFzdF9zZWVuX2luX3F1ZXN0aW9ufXECKEsJY2RhdGV0aW1l\nCmRhdGV0aW1lCnEDVQoH3QMBDyYSAp8chVJxBEsDaANVCgfdAhwUCwsK4ViFUnEFSwdoA1UKB90D\nAQsiJAiC8oVScQZ1VRhwYWdpbmF0b3JfUVVFU1RJT05TX0xJU1R9VRNmb3JjZV9lbWFpbF9yZXF1\nZXN0iHUu\n	2013-03-15 15:38:18.406145
+9ac92798a94ff93586619a06db1a4455	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 19:49:35.971793
+9ea9c9d8ba89063ad1e1d08ede047030	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:34:32.485776
+9ec0de0c0886048d30146d50573ea982	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:08:39.946831
+a160674b29ee116a72c0c92b58fea697	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:34:37.42584
+a6b0773936de15822356c62df4798d95	NWUwYjRjNzZmMDNiMjUyYWRmNDYyODk1ODdhMjdmNWFkYWI4ODAzNDqAAn1xAShVDW9uX3NpZ25p\nbl91cmxVOmh0dHA6Ly9ldmVuaW5nLWxvd2xhbmRzLTc1MzIuaGVyb2t1YXBwLmNvbS9hY2NvdW50\nL3NpZ25pbi9VFXBhZ2luYXRvcl9BTlNXRVJfTElTVH1VGHBhZ2luYXRvcl9RVUVTVElPTlNfTElT\nVH1VE2ZvcmNlX2VtYWlsX3JlcXVlc3SIVRVsYXN0X3NlZW5faW5fcXVlc3Rpb259cQJLAWNkYXRl\ndGltZQpkYXRldGltZQpxA1UKB90CAQ8pOwH/FoVScQRzVQxncmVldGluZ19zZXSIdS4=\n	2013-02-18 23:10:24.45553
+a7dc5fe9029fae83b1819c2dd41c6adc	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:51.325951
+aa30fdc179b1ac7309e2f75e6cbc1e27	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:35.343323
+b37ccfb265978dae019271bbe1b6e81d	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:38:14.946312
+b5d0dfc9472e968fb7ed0bbd21a8e27b	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:43.365237
+b6a4c399a2780dfef49ea9932aca88c4	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:32:38.227362
+b8ba1890943b12a32c0915501350cc6c	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:16.060002
+bd6bf5c5a9fdf33f8cc2abbc0ccb8739	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:41:03.000136
+c3e4fe2a4ecc6751a5332fab0f45bc6a	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:38:21.162148
+c444934cd540f4e7757c7fb8d9bddc97	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:39.757646
+c7c332dd1b5f417f8b5f65d3e1579a84	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:07:36.488497
+c8664d361c8d3f402637adad29ccb327	NmU4NjA3YTYyMjdhZWJlMDUxYjcxYzI5ZTdiODIyYjhiMTU0YjBiZDqAAn1xAShVGHBhZ2luYXRv\ncl9RVUVTVElPTlNfTElTVH1VFWxhc3Rfc2Vlbl9pbl9xdWVzdGlvbn1xAihLAWNkYXRldGltZQpk\nYXRldGltZQpxA1UKB90CHBIrLg2h0oVScQRLA2gDVQoH3QIcEis7Cx89hVJxBUsFaANVCgfdAhwS\nGw0Ny/SFUnEGSwdoA1UKB90CHBIaMQuHxIVScQd1VRJfYXV0aF91c2VyX2JhY2tlbmRVKWRqYW5n\nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kVRNmb3JjZV9lbWFpbF9yZXF1ZXN0\niFUMZ3JlZXRpbmdfc2V0iFUNb25fc2lnbmluX3VybFUfaHR0cDovL2dzYy1jbG91ZC5oZXJva3Vh\ncHAuY29tL1UNX2F1dGhfdXNlcl9pZEsCdS4=\n	2013-03-14 18:44:00.67348
+ce41a3d0565db877a93ffc04f3bd9802	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:38:27.50558
+cea16c2773d875b1665beea5f0eb19aa	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:32:21.688791
+d020fe4ff4564d1f9fb0eadc6bfbac3c	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:54.151769
+d3c79ee76da7895b0f859f5a5216ba3e	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:11.120648
+d4b86b369b2399d19d1356ff4907425a	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:04.672343
+d8d181c1cf906aab37848eb76908c73d	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:37:46.282924
+dae3cc21843c59caacc0136e240712fe	YWYyODYzZmIzZjVmMGNiYzQ1YjY1Y2ZkMmNmYjJiNzA2M2RkYjg2ZTqAAn1xAShVDGdyZWV0aW5n\nX3NldIhVGHBhZ2luYXRvcl9RVUVTVElPTlNfTElTVH11Lg==\n	2013-02-13 02:31:20.252292
+db894155fc8c20ef3f178de43d16ecc4	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:02.436261
+dbcfb8f3783be38ebb0070455439be6c	MjUzMTgwODU1MDQ3M2ZlYjgzODBmMTRmYTM0MzA5ZGE2OTM2MmQzMzqAAn1xAShVDGdyZWV0aW5n\nX3NldHECiFUYcGFnaW5hdG9yX1FVRVNUSU9OU19MSVNUfXUu\n	2013-02-26 17:16:56.089137
+dc3e9de7caf694efce00c05e69caf058	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:40:59.691663
+e89fc2cb3f7faefd870596df98b5329d	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:03:02.142678
+e9e2a9f82f0cd754731b53bdb976d24c	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 19:50:27.720146
+eb887c30a28ef6b33a91791ee961a6a5	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:21.694141
+ebaee670bc00af8e5f00e4c9beaf08a5	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:09:14.891436
+edac3121a76d4da0511964768c55e50b	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 11:31:54.083592
+f8462530321a572ca454dd1304f81070	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:10:20.192206
+f88e18966e94e770f6d3092869dfca10	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 19:49:30.575187
+fa49e20217a431dfd41878d0f1d86100	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-15 15:38:13.423688
+fccd2f538d5cd3597b44a7d3c19d42cb	NDVkMTliNDI2ZTE0ZjUxZmVjNzZkYTI2MzYyZmUzYTRkNzBmYmQxYjqAAn1xAVUMZ3JlZXRpbmdf\nc2V0cQKIcy4=\n	2013-03-14 20:03:46.887183
+26ddaca00646f8b469b174693170b96b	gAJ9cQEoVRVwYWdpbmF0b3JfQU5TV0VSX0xJU1RxAn1xA1UNX2F1dGhfdXNlcl9pZHEESwNVE2Zv\ncmNlX2VtYWlsX3JlcXVlc3RxBYhVEl9hdXRoX3VzZXJfYmFja2VuZHEGVSlkamFuZ28uY29udHJp\nYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEHVRhwYWdpbmF0b3JfUVVFU1RJT05TX0xJU1Rx\nCH1xCVUVbGFzdF9zZWVuX2luX3F1ZXN0aW9ucQp9cQtLFGNkYXRldGltZQpkYXRldGltZQpxDFUK\nB90DBQAODgnb2YVScQ1zVQ1vbl9zaWduaW5fdXJscQ5Vamh0dHA6Ly8xOTIuMTY4LjEuMjMvcXVl\nc3Rpb25zLzIwL2Nsb3VkLWNvbXB1dGluZy10ZWNobm9sb2d5LXVzZWQtZm9yLXRoZS12aXJhbC1n\nZW5vbWljcy1jbG91ZC1yZXNvdXJjZS12Y3JxD1UMZ3JlZXRpbmdfc2V0cRCIdS5mMTc1NjczZWFj\nZjc1MTM4YjRlNTRlNDc2Mjg3YzVkZQ==\n	2013-03-19 00:14:14.774217
+0915727cb6aa1cf00663163f90c32c3a	gAJ9cQEoVRhwYWdpbmF0b3JfUVVFU1RJT05TX0xJU1RxAn1xA1UMZ3JlZXRpbmdfc2V0cQSIdS4w\nMzdkNjRmY2JiMWZjOWEyMzMwZDA1NWVjYzA4ZjRhZA==\n	2013-04-09 19:35:51.017117
+3956c8b445a8a221a75a4187b46cb0c9	gAJ9cQEoVRVwYWdpbmF0b3JfQU5TV0VSX0xJU1RxAn1xA1UMZ3JlZXRpbmdfc2V0cQSIVRVsYXN0\nX3NlZW5faW5fcXVlc3Rpb25xBX1xBksUY2RhdGV0aW1lCmRhdGV0aW1lCnEHVQoH3QQRCiAOCBis\nhVJxCHN1LmYzYjJmY2ViYTZjMmZkYTRhM2ZmZGNlZGM4OTUxOWMy\n	2013-05-01 10:32:14.884946
+d1d5e444bf867965ab2299367b8301b1	gAJ9cQEoVRVwYWdpbmF0b3JfQU5TV0VSX0xJU1RxAn1xA1UNX2F1dGhfdXNlcl9pZHEESwJVE2Zv\ncmNlX2VtYWlsX3JlcXVlc3RxBYlVFWxhc3Rfc2Vlbl9pbl9xdWVzdGlvbnEGfXEHKEsBY2RhdGV0\naW1lCmRhdGV0aW1lCnEIVQoH3QUBDwALA5DPhVJxCUsDaAhVCgfdBQEOKAUBMEiFUnEKSwVoCFUK\nB90FAhIGFw4OVIVScQtLB2gIVQoH3QUCEDQIBPUxhVJxDEsJaAhVCgfdBQIQMhwEtVCFUnENSxRo\nCFUKB90FAhIGAw8W14VScQ5LF2gIVQoH3QUJDgY5B/QOhVJxD0saaAhVCgfdBQISCQgIF+GFUnEQ\ndVUYcGFnaW5hdG9yX1FVRVNUSU9OU19MSVNUcRF9cRJVEl9hdXRoX3VzZXJfYmFja2VuZHETVSlk\namFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEUVQ1vbl9zaWduaW5fdXJs\ncRVVJGh0dHA6Ly8xNzIuMTcuMzEuMTA0L2FjY291bnQvc2lnbmluL3EWVQxncmVldGluZ19zZXRx\nF4h1LjYxNWJhYzQ0NzJiMzA4YzgxZDBjM2FkODA0MDQyMzU5\n	2013-05-23 14:06:57.864817
+f335e1d395aebc2312f3881fbd40ae5b	gAJ9cQEoVRVwYWdpbmF0b3JfQU5TV0VSX0xJU1RxAn1xA1UMZ3JlZXRpbmdfc2V0cQSIVRVsYXN0\nX3NlZW5faW5fcXVlc3Rpb25xBX1xBksXY2RhdGV0aW1lCmRhdGV0aW1lCnEHVQoH3QUdECAFBGzr\nhVJxCHN1LmVjZDBjMTM3NWM4ZjhiNDVlNzQ4NjdjZmRmZDA5N2I2\n	2013-06-12 16:32:05.554817
+2f1b401525f01c27a71762298b9f9495	gAJ9cQEoVQ1fYXV0aF91c2VyX2lkcQJLA1UTZm9yY2VfZW1haWxfcmVxdWVzdHEDiFUVbGFzdF9z\nZWVuX2luX3F1ZXN0aW9ucQR9cQUoSwdjZGF0ZXRpbWUKZGF0ZXRpbWUKcQZVCgfdBR0QNBEGo9iF\nUnEHSwNoBlUKB90FHQ8OOglgLYVScQhLF2gGVQoH3QUdDworCzyfhVJxCXVVDGdyZWV0aW5nX3Nl\ndHEKiFUYcGFnaW5hdG9yX1FVRVNUSU9OU19MSVNUcQt9cQxVEl9hdXRoX3VzZXJfYmFja2VuZHEN\nVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEOVQ1vbl9zaWduaW5f\ndXJscQ9VFWh0dHA6Ly8xNzIuMTcuMzEuMTA0L3EQVRVwYWdpbmF0b3JfQU5TV0VSX0xJU1RxEX1x\nEnUuMzVlMzJkMzRkODhmMTg5NWU4M2EyMzlhYTM1MmE0NGI=\n	2013-06-12 16:52:17.769145
+76f817cfbb2313034ea645aa545f9994	gAJ9cQEoVRVwYWdpbmF0b3JfQU5TV0VSX0xJU1RxAn1xA1UMZ3JlZXRpbmdfc2V0cQSIVRVsYXN0\nX3NlZW5faW5fcXVlc3Rpb25xBX1xBksXY2RhdGV0aW1lCmRhdGV0aW1lCnEHVQoH3QUdESMuDzNs\nhVJxCHN1LmE3N2FjOTQ5NWY5M2VlODgzNTFmNjUwZjcyMTZmOGM0\n	2013-06-12 17:35:47.259318
+\.
+
+
+--
+-- Data for Name: django_site; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY django_site (id, domain, name) FROM stdin;
+1	example.com	example.com
+\.
+
+
+--
+-- Data for Name: forum_action; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_action (id, user_id, real_user_id, ip, node_id, action_type, action_date, extra, canceled, canceled_by_id, canceled_at, canceled_ip) FROM stdin;
+1	2	\N	192.207.234.194	\N	userjoins	2013-01-25 16:51:31.183498	\N	f	\N	\N	
+2	2	\N	192.207.234.194	1	ask	2013-01-25 16:51:31.773561	\N	f	\N	\N	
+3	2	\N	192.207.234.194	2	answer	2013-01-25 16:57:40.684541	\N	f	\N	\N	
+4	2	\N	192.207.234.194	1	revise	2013-01-31 16:16:55.186492	T[int]2	f	\N	\N	
+5	2	\N		\N	award	2013-01-31 16:16:55.649924	\N	f	\N	\N	
+6	2	\N	192.207.234.194	3	ask	2013-01-31 16:19:03.139227	\N	f	\N	\N	
+7	2	\N	192.207.234.194	4	answer	2013-01-31 16:19:09.076093	\N	f	\N	\N	
+8	2	\N	192.207.234.194	5	ask	2013-01-31 17:52:07.914788	\N	f	\N	\N	
+9	2	\N	192.207.234.194	6	answer	2013-01-31 17:52:29.039371	\N	f	\N	\N	
+10	2	\N	192.207.234.194	7	ask	2013-01-31 18:19:20.45982	\N	f	\N	\N	
+11	2	\N	192.207.234.194	8	answer	2013-01-31 18:19:35.716077	\N	f	\N	\N	
+12	3	\N	72.225.234.240	\N	userjoins	2013-02-12 17:17:32.342512	\N	f	\N	\N	
+13	3	\N	72.225.234.240	9	ask	2013-02-12 17:19:41.261807	\N	f	\N	\N	
+14	2	\N	72.225.234.240	\N	editprofile	2013-02-13 11:48:47.644954	\N	f	\N	\N	
+15	2	\N	72.225.234.240	18	ask	2013-02-20 15:03:26.68687	\N	f	\N	\N	
+16	2	\N	72.225.234.240	\N	editprofile	2013-02-20 16:51:05.237454	\N	f	\N	\N	
+17	3	\N	72.225.234.240	\N	editprofile	2013-02-20 16:58:32.10815	\N	f	\N	\N	
+18	2	\N	72.225.234.240	\N	editprofile	2013-02-20 17:00:11.351616	\N	f	\N	\N	
+19	4	\N	72.225.234.240	\N	userjoins	2013-02-20 17:02:36.470231	\N	f	\N	\N	
+20	2	\N	72.225.234.240	18	delete	2013-02-21 12:20:27.123129	\N	f	\N	\N	
+21	2	\N	72.225.234.240	9	revise	2013-02-21 12:29:11.938227	T[int]2	f	\N	\N	
+22	3	\N	72.225.234.240	19	answer	2013-02-21 12:40:42.793111	\N	f	\N	\N	
+23	3	\N	72.225.234.240	9	revise	2013-02-21 12:43:42.886065	T[int]3	f	\N	\N	
+24	3	\N		\N	award	2013-02-21 12:43:43.286621	\N	f	\N	\N	
+25	3	\N	72.225.234.240	9	revise	2013-02-21 12:44:19.604382	T[int]4	f	\N	\N	
+26	3	\N	72.225.234.240	9	revise	2013-02-21 12:49:34.936818	T[int]5	f	\N	\N	
+27	3	\N	72.225.234.240	20	ask	2013-02-21 13:10:12.551689	\N	f	\N	\N	
+28	3	\N	72.225.234.240	20	revise	2013-02-21 13:10:28.336734	T[int]2	f	\N	\N	
+29	3	\N	72.225.234.240	9	revise	2013-02-21 13:11:23.066912	T[int]6	f	\N	\N	
+30	2	\N	192.207.234.194	21	answer	2013-02-21 15:54:47.615453	\N	f	\N	\N	
+31	2	\N	192.207.234.194	22	answer	2013-02-21 15:56:39.258046	\N	f	\N	\N	
+32	3	\N	72.225.234.240	21	delete	2013-02-28 19:49:49.352724	\N	f	\N	\N	
+33	3	\N	72.225.234.240	22	delete	2013-02-28 19:49:55.625374	\N	f	\N	\N	
+34	3	\N	192.168.1.14	20	revise	2013-03-05 00:14:14.483967	T[int]3	f	\N	\N	
+35	2	\N	172.17.133.12	1	delete	2013-05-02 16:51:35.805728	\N	f	\N	\N	
+36	2	\N	172.17.133.12	23	ask	2013-05-02 16:57:59.822022	\N	f	\N	\N	
+37	2	\N	172.17.133.12	24	answer	2013-05-02 17:56:53.188836	\N	f	\N	\N	
+38	2	\N	172.17.133.12	25	answer	2013-05-02 18:03:04.841286	\N	f	\N	\N	
+39	2	\N	172.17.133.12	25	revise	2013-05-02 18:05:13.415342	T[int]2	f	\N	\N	
+40	2	\N	172.17.133.12	25	revise	2013-05-02 18:06:03.660591	T[int]3	f	\N	\N	
+41	2	\N	172.17.133.12	26	ask	2013-05-02 18:07:28.28244	\N	f	\N	\N	
+42	2	\N	172.17.133.12	27	answer	2013-05-02 18:09:08.134751	\N	f	\N	\N	
+43	2	\N	172.17.133.12	24	revise	2013-05-09 14:06:57.130879	T[int]2	f	\N	\N	
+\.
+
+
+--
+-- Data for Name: forum_actionrepute; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_actionrepute (id, action_id, by_canceled, value, user_id, date) FROM stdin;
+1	12	f	1	3	2013-02-12 17:17:32.368742
+2	19	f	1	4	2013-02-20 17:02:36.495757
+\.
+
+
+--
+-- Data for Name: forum_authkeyuserassociation; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_authkeyuserassociation (id, added_at, user_id, key, provider) FROM stdin;
+\.
+
+
+--
+-- Data for Name: forum_award; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_award (id, user_id, badge_id, node_id, awarded_at, trigger_id, action_id) FROM stdin;
+1	2	18	\N	2013-01-31 16:16:55.657973	4	5
+2	3	18	\N	2013-02-21 12:43:43.31104	23	24
+\.
+
+
+--
+-- Data for Name: forum_badge; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_badge (id, awarded_count, type, cls) FROM stdin;
+1	0	3	PopularQuestion
+2	0	2	NotableQuestion
+3	0	1	FamousQuestion
+4	0	3	NiceQuestion
+5	0	2	GoodQuestion
+6	0	1	GreatQuestion
+7	0	3	NiceAnswer
+8	0	2	GoodAnswer
+9	0	1	GreatAnswer
+10	0	2	FavoriteQuestion
+11	0	1	StellarQuestion
+12	0	3	Disciplined
+13	0	3	PeerPressure
+14	0	3	Critic
+15	0	3	Supporter
+16	0	3	CitizenPatrol
+17	0	3	Organizer
+18	1	3	Editor
+19	0	3	Scholar
+20	0	3	Cleanup
+21	0	3	Autobiographer
+22	0	2	CivicDuty
+23	0	3	Pundit
+24	0	3	SelfLearner
+25	0	2	StrunkAndWhite
+26	0	3	Student
+27	0	3	Teacher
+28	0	2	Enlightened
+29	0	2	Guru
+30	0	2	Necromancer
+31	0	2	Taxonomist
+\.
+
+
+--
+-- Data for Name: forum_flag; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_flag (id, user_id, node_id, reason, action_id, flagged_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: forum_keyvalue; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_keyvalue (id, value, key) FROM stdin;
+1	eJzzNDDg0gMAAwQA4g==	FORM_EMPTY_QUESTION_BODY
+2	T[int]1	FORM_MIN_NUMBER_OF_TAGS
+3	T[int]5	FORM_MAX_NUMBER_OF_TAGS
+4	T[int]3	MIN_USERNAME_LENGTH
+5	T[int]3	DISCIPLINED_MIN_SCORE
+6	T[int]-3	PEER_PRESSURE_MAX_SCORE
+7	T[int]300	CIVIC_DUTY_VOTES
+8	T[int]10	PUNDIT_COMMENT_COUNT
+9	T[int]3	SELF_LEARNER_UP_VOTES
+10	T[int]100	STRUNK_AND_WHITE_EDITS
+11	T[int]10	ENLIGHTENED_UP_VOTES
+12	T[int]40	GURU_UP_VOTES
+13	T[int]60	NECROMANCER_DIF_DAYS
+14	T[int]5	NECROMANCER_UP_VOTES
+15	T[int]50	TAXONOMIST_USE_COUNT
+16	\N	MAINTAINANCE_MODE
+17	T[unicode]Q&A Forum and Documentation for the Viral genomics Cloud Resource	APP_TITLE
+18	eJxtkV9r2zAUxd8L+w6HPreZkz2E7s2zlVglsTPLDgz2othyrWFbQX9a+u177RVK2UBIcK7O0b0/nateO9CSaE0TRjV56bWZ8KIuTnsFObVotWuCc7PcGRvGeYfvFaxyStqmx9WaP6rx33GbclGV/Edd8SJHscOpZPdJke/4vi5ZijSuYsR5fPgluMCJn9iB50yQlOLMy/iAPcuLI4NgP2uWJ1TalcURe5FQVPHIkkqgysqi3mezoarJcoyTjFLIU55ZKUAvVxlDcijq9BbU6+xOBhNanP42ukzgemP96svvEEWRfD8qmurf28SnN86rFpfXZfDHFRIr9RPOBExZ8Ml57cM7ry5MLd3VRLE3g8KL9j061Sorh6Xo0FkzLkn5gpv0jwjTIR4GZZ9elzQ+ddSDNsEh1cTbKXf3H5ubfZmSg+/vkKqrtH7+zQ91CcvCKCcIZZ91Q5a5UYvGTN5KmnMK40VZhzxa38f8WxRt17PrK8HKMpFvtptNFD0Qp2ibrPCZ3M11fbN6A+8Jv+E=	APP_DESCRIPTION
+19	T[unicode]OSQA,CNPROG,forum,community	APP_KEYWORDS
+20	T[str]	GOOGLE_SITEMAP_CODE
+21	T[str]/upfiles/favico_1.ico	APP_FAVICON
+22	eJzzNDDg0gMAAwQA4g==	USE_CUSTOM_CSS
+23	eJzzNDDg0gMAAwQA4g==	USE_CUSTOM_HEAD
+24	T[str]VCR: Viral genomics Cloud Resource	APP_SHORT_NAME
+25	eJzzNDDg0gMAAwQA4g==	USE_CUSTOM_HEADER
+26	T[str]/upfiles/logo.png	APP_LOGO
+27	eJzzNDDg0gMAAwQA4g==	USE_ANNOUNCEMENT_BAR
+28	T[int]300	SUMMARY_LENGTH
+29	eJzzNDDg0gMAAwQA4g==	ALLOW_UNICODE_IN_SLUGS
+30	eJzzNDDk0gMAAwcA4w==	SHOW_STATUS_DIAMONDS
+31	eJzzNDDk0gMAAwcA4w==	SHOW_WELCOME_BOX
+32	T[unicode]<p>Welcome to the GSC Cloud Project Open Source Q&A (OSQA) documentation system.</p>	APP_INTRO
+33	T[str]markdown	SIDEBAR_UPPER_RENDER_MODE
+34	eJxNT71OwzAQ3vsUh8oAiWonHSshxFLBhKASHUIGJ74kBscX7AtR3x5HKWqXO+nu+/34HLMsU8VNccRqr2o25MBSS2WxLcsiL5f/eg3FO1qjKovwenh7gmcKbFx7gSzziOCxpr5Hp6FIkotqksxYaMgvAt0iIGAfL6PT6OE2z2RPjjvgDo2PSmfHgP4XfYAWeX7BF1WgyaGAAyLQ6GerwDhsqtNm3pHB4wDtaDRG47uOedhJOZlvIyj8KOGQpTZhsOokNdVBvrjAytqYKJ3jpeTSS/Z7cd0x1tjBv+I0iQmrZsGJ2PxRNY2JuRkfZqczZRspspcaGzValj1qo6TpVYtBXvEH166GfCX+ALiei2U=	SIDEBAR_UPPER_TEXT
+35	eJzzNDDg0gMAAwQA4g==	SIDEBAR_UPPER_DONT_WRAP
+36	eJzzNDDg0gMAAwQA4g==	SIDEBAR_UPPER_SHOW
+37	T[str]markdown	SIDEBAR_LOWER_RENDER_MODE
+38	eJxtkUFPwzAMhe/7FZZ2gWq02RCa4DZtEp2EBqgTF+CQtS4NtElJnFX79zgtYpPGJVKcz/Z7Ly9vXgghx2N4QGk1NMYiyJ3xBFQh3GdLWNbGF/BkzSfmFA/8cG7/I0A5KL0usACloatMjWAstNISdIoqKLFAK+seYtSapl+1kaSM5vpaO1LkidtKWNQ12o8DSF3wQ8nzlfEOVsqhdOgmEJTc5DAIOp/hwpAUZU3VBFYYVDSo6VjtJ6e+kRoytHuVc0tQbyE3mqxkQ9o3O7QONmJ6tVhfCzGfhq6EXaVptpnNZzMhbnm/mC9j2FYcQHvMojfO64LH39gM1OdhM1qY3Ad1vQtwB0fYwF45NXzGaxQ9Zs8L6HDHJYyi94uKqL1Lkq7rYuO+ZayRksve0h+svtQpyddTdNROR/EP4PGu+A==	SIDEBAR_LOWER_TEXT
+39	eJzzNDDg0gMAAwQA4g==	SIDEBAR_LOWER_DONT_WRAP
+40	eJzzNDDk0gMAAwcA4w==	SIDEBAR_LOWER_SHOW
+41	T[int]25	RECENT_TAGS_SIZE
+42	T[int]15	RECENT_AWARD_SIZE
+43	eJzzNDDg0gMAAwQA4g==	USE_CUSTOM_FOOTER
+44	T[str]http://www.jcvi.org/cms/research/projects/jcvi-cloud-BioLinux/overview/	SUPPORT_URL
+45	T[str]mailto:agbiotec@gmail.com	CONTACT_URL
+46	T[str]	GOOGLE_ANALYTICS_KEY
+47	eJzzNDDk0gMAAwcA4w==	FORCE_SINGLE_URL
+48	T[int]0	CAPTCHA_IF_REP_LESS_THAN
+49	eJzzNDDk0gMAAwcA4w==	WIKI_ON
+50	T[int]1000	POPULAR_QUESTION_VIEWS
+51	T[int]2500	NOTABLE_QUESTION_VIEWS
+52	T[int]10000	FAMOUS_QUESTION_VIEWS
+53	eJzzNDDg0gMAAwQA4g==	DISABLE_ACCEPTING_FEATURE
+54	T[str]identicon	GRAVATAR_DEFAULT_IMAGE
+55	T[str]g	GRAVATAR_ALLOWED_RATING
+56	T[str]	FB_API_KEY
+59	eJzzNDDk0gMAAwcA4w==	EMAIL_UNIQUE
+60	eJwVzUsSwkAIBNA9J8kqJUnUeJHZUwE/5cxIZRLN8W12jwaqu+xM6b4vb/KBJLXnayMfIWmNfIrIDvJzJKrkF8A0jq6xk6+Rz5Batg2+wUWqPGA+YdhdJRbMGFYrn/jg6Kr2g9DV/wHexCkV	RESERVED_USERNAMES
+61	T[int]1	INITIAL_REP
+62	T[str]	EMAIL_SUBJECT_PREFIX
+63	T[str]#e5ebf8	EMAIL_BORDER_COLOR
+64	eJw1jDEOwjAMAPe+IipDl6QiggG5H2DnBVblNJZcJ0pSRHk9FYjb7oZ79HOSVOB0+TKFpM0FXFl2GCLJkxrPaJQ2GqzBwijW3P/dmopaXaXCYRJWcpF4iQ38Lb9+r8pvAn89dMWysLqWMvjz4X2XfTd+ACjNK70=	EMAIL_PARAGRAPH_STYLE
+65	T[str]text-decoration:none;color:#3060a8;font-weight:bold;	EMAIL_ANCHOR_STYLE
+66	T[str]	EMAIL_FOOTER_TEXT
+67	T[str]smtp.gmail.com	EMAIL_HOST
+68	eJzzNDDk0gMAAwcA4w==	DONT_NOTIFY_UNVALIDATED
+69	eJzTSNEDAAFxALs=	ONLINE_USERS
+70	T[int]30	MAX_VOTES_PER_DAY
+71	eJzTyNEDAAGBAMM=	REQUIRE_EMAIL_VALIDATION_TO
+72	eJxNjb0KwkAQhPs8xdQHSnwECwvBIkWwEmTNbczi/cS7vYCQhzcqBNv5Zr45X0pd14QNjKH8AOFZOKvEgMSOJwoKjdCBMe+b5toe29NhRhe9L0H0Zcwq+HRU1DF8yYobQ8I37GPyiP2fe92MKU5iGRxiuQ+wrCQur3hxdI4pgYJdPkMnmX+wGnfV9g173D7z	QUESTION_TITLE_TIPS
+73	eJxdzsEKgkAQBuC7T/E/QIk9gkFGBxXMokOwrLm1C5tr7mwi+PBtKAldhpmBb+Y/X10URRxrlPxhwTuB3nS1BUlO6JXWIOGLISk6i/67JaksXk5YUqaB73llHIXLJSmGiUqh24nirpoag3HdTy4gXq7deAPJ3wKuBRmMSV6kLI0vLDul213B8oSV8f44gnzcFSpHUISnszQxH08L7qdZHrJ/Ob8N2k0QfgB95VVh	QUESTION_TAG_TIPS
+74	T[int]10	FORM_MIN_QUESTION_TITLE
+75	T[int]10	FORM_MIN_QUESTION_BODY
+76	T[int]20	FORM_MAX_LENGTH_OF_TAG
+77	T[int]1	FORM_MIN_LENGTH_OF_TAG
+78	eJzzNDDg0gMAAwQA4g==	LIMIT_TAG_CREATION
+79	T[str]	WORDPRESS_API_KEY
+80	T[int]250	REP_TO_CLOSE_OWN
+81	T[int]3000	REP_TO_CLOSE_OTHERS
+82	T[int]10	FORM_MIN_COMMENT_BODY
+83	T[int]600	FORM_MAX_COMMENT_BODY
+84	eJzzNDDg0gMAAwQA4g==	FORM_GRAVATAR_IN_COMMENTS
+85	T[str]cloudgsc@gmail.com	EMAIL_HOST_USER
+86	T[str]cloudgsc123	EMAIL_HOST_PASSWORD
+87	T[str]default	SETTINGS_PACK
+89	eJzzNDDg0gMAAwQA4g==	EDITABLE_SCREEN_NAME
+90	T[int]120	HOLD_PENDING_POSTS_MINUTES
+91	T[int]15	WARN_PENDING_POSTS_MINUTES
+92	T[unicode]Creative Commons Attribution-NonCommercial-NoDerivs (CC BY-NC-ND) Licence.	APP_COPYRIGHT
+93	eJyNWMFy2zYQvfcrUB+apiPLbo85tKPESuqZxEpiNZlM2vFA5IpCRRIMAEpRJx/ftwtQJGUn7U0igcXbt7tvF3z3Z3t5eal/+ul1SdqTylofbGX+IRU2xqtAn4MyNf6Q0nllauOD08HYWmlH2Ba3d0aeO/rUUh3Kg5r5LeXqTUueV3v14/PZm8en63+3e4VT9HHdxaz2e3Iqs1XV1iYcVG7Wa3KwqdbOVlgaDo3JdKnW1rXVb2OLs28YwjnftqVWlOkWHBi8tyCCvIKfa1Pnpi6UFoOgxAobn46e2TV2eFVRtcL7qVKzsd2JWh2AowZxPkyUbQgMwnZlHanSbMEskHkc6JnXwtm2maj9BkhVQ7YpibkGZCI+vDA7Dg4ZB1MICEPQdY5XOJMjJr/hTDzAt6u/KQvYNB0y9fSgtkSNOKZKRN5Fn9nj3jW2m/yexITo+aTatw5uhI0OD5FEn5Er/Kw3dy4GCwrhZG1N+9GyTNfsQG5rUnsTNrYNWM7JwOmXybLpOJXeM4wtYEhAemNs6lppv1VM6Em+vLIe6V011gUtWXs+2OlxbJkzDkcl7bAgxn7IwlQ9pTXTfLAtHzJRTayjSm+Zeych86RdtuFsANneVKbU7njQVH3AXoY5WNajQO7EYAcTSppIIiGDkUd4pIv/S0PvjN5Zk1N+wkQqf3nJjowDJzHmJKxt+AYbE1kTrB1kHePUrmgrgNb30jABTuiu0/kQnOrQ5ccJ0MXtm9kTtWioVre2dRmpNz/M1HMpYJGSDvUgecF5IMQWhY0l7MP9ipuqEQUbW0pC57SSYgUkhNgdk1YzKXQ4lltuyjZIXSryHrVBY/4HlTRltGrlDK0HKHyXOaxAzCj4YgBrnZmSM21Mm3q/OQjbVGlTsk9mDclJwbZ9Uv+mxvzNH1gvUQPyFeXOZltGjjxtswyurNvyQUoHJbDckKdTk2UJbe/VIqljUqa4Fv2BtbNDqmgHnyE0OHkDgp+MPIbDVKdS6Gnd6B3DpjrBony0nPUDR8RdDYrdq5SvOImPr7m+NOBAHBLGsYHBCy8Wxlo16eXRus6wTx3TOGmS4iSOg1iGoUugrSM5gRzwhSIzSLu2AcRTFmFtZ8sdVaIDHJMOIAeyYvaOvQWaJpTDBnX7cmyKtdloF0xmGs2gbWzzUiv7RPbhkTuJVnIk1saOStuIy2h7S65k0LvfHE57BUTLQ3QYodrpEvUV01bnuWP3Nb/g2cE48Uo08AhODktDSG+T/W49v5LDGPaoRq7XXLGMX5eIQo4dHX/C9gggG+Ncqh+FCFBzekjFj5BOROhZrHPLZfaRm8pfP17oLLNtHS5Q+fl5MsBTiDp7l6ypWHizaOfsMQiLCDlofOyBwjcQTtTfFhS0DSfsxwwOxR4q6ZhOH+AoLcaPC0cFGiY5wHjGO2i8HiCGhCkWY4vUydOAMkZwosOSvRtUbicIxj9hd1gOOAloJYlk/NFgnnoZKxyr4HIUzjXwyTyh1Va7CvpzAPQqtR5WEx83ymyhXa2cKTZB/mKiQsJUklyQVVgDf+lYlq2AhnbaKHn0zK14SeMT99ZtT5wVLRi0Fut6rxGTnQ1cVJ1vqAArWgGX8QwWTVmqQiN+nsuwQSRZ5/Ybw0KHDEWwSiw+izji+7NOWONfTAcOFRsrxbYFahztggeMe9oRXOtlat+Y6gIJOlXvQItt/T1O5PDC6bwFAFQBOlFRU97NuJHvFbpSHtXBHuGM2OR+Rp911fCAYtbdMASORnoxpE+mWI2ZrGy4w0Q2J7HiTN1g3hPS0CsSvVO1iAoQJXnDFWui530oKuPRRLlxT7jZdyZyu6+TkbkG5fyb+Vmj17sUHaolSdWXt/PXdy9m1zd3Tz/c/fH63WI5v/pyDBkdt2uOp09nYNyRuTTufrm4XfLuq8X7m9F+iaijOKeUmAMDB++Xy8suxpLsafhFkbZVW0rhIMEfSL5YQkGvSu6B3G/pc1MyrJTQA0X1IqkCH5cTeqBAxvXBgtf3s/NfVXRtubh7tnj1an6z/NItzDEOBhqt7ZZezV/Ol/Nux+1xS1ZyIiEow6G/3/YMBM7vQN5xg8M1iLvx13a8nS9ez29OtmA6/trq5ezFcSHlJl4uUhoNFs6vrpd3i+Xv87c9dgHCy8WJvA/LfQfGGxNPsjVy9d9UjYZkyRoU604H7U4E6kV6zKIAZ4vSrqSiHRp/UeM6j7ktLjiPNQalAPLuoal0wdribWYk4fjS9UD7m6rr8Ih7LUqd+ylunEHuOGmIh0bX/MUA+iGb48iVBovUElKW+7bhue/okGqcDTazZczqnNa6LQevddNA9dOo4D+1ciU2IpsCFg9ru1+XuHedy6V6bQpAG96uQpKX6Gxve4p4jPle2sH0QXH2GHdjtP9r+Bq1MovNddBaT8JzY+PggAstOr0MrcH20EpbyBFR1zlDWOxNRiOqvNx6rq+gQtNiql5YW7DeftAbC/OzxUu8CNlUfXwp5sDG98PJBMpueCCRt2ePTxPsIEiiuKavDvxAqgOXsWMhXTx8LZtxh2aRhwQRenCdUT+W3p+3mLRW9Hb8LWVwTeKLgbO71KHxwyGjsVTzbahrelt4iRRAPFfy9Spejqc8WsmJyBpnWfTSvY9FEIFA7+VbvW9wR41JkW0s+D6ZEW4Di7uE6wjxK/dmdDux062bSGuLnwHE/tH1FQW0xO/j9u+an7+b/gvjCOz4	FAQ_PAGE_TEXT
+94	T[int]10	REP_GAIN_BY_UPVOTED
+95	T[int]2	REP_LOST_BY_DOWNVOTED
+96	T[int]50	REP_TO_COMMENT
+97	T[int]2000	REP_TO_DELETE_COMMENTS
+98	T[int]500	REP_TO_REOPEN_OWN
+99	T[int]500	REP_TO_RETAG
+100	T[int]2000	REP_TO_EDIT_OTHERS
+101	T[str]	TWITTER_CONSUMER_KEY
+102	T[str]	TWITTER_CONSUMER_SECRET
+103	T[str]	FB_APP_SECRET
+104	eJwljrsOgzAMAHe+whsd+qLvjqhTh7YDUvfQOmAJ7CgxSP37JrDFdyfHi84VWZVXzvR55naZqfLyO6JXCsRNRPuEXtYiBxpxCWU9zA/xcGfjnBfnySjG9pDam7AiK4wkXcQBFH0fQCwMIUXHOXI/T02r8J4yEo7qlNSDQofmO/9+TqSSHoURKACLQo3RAdMnbbuk4Bmpxw5Hw7oRa1cqjj7RXqfjtUUfh2KbmfUfWBFO2A==	FLAG_TYPES
+105	eJxNjksOwjAMRPc9hXdlAUj8L8AeULmAm7g0KI1D4rTXJ6EgsXzjN9YsrN9UTX1O3hqFQnBLFMWwqyu/rbCpfwwmAnfdStgbBRzAsUAgSyM6yfKuyHdmiKl9khIzEqDTgOGRBnKCJcne/uP1BK+/x+jiRIH0EoJ59PJlmDCflCIvpHP1UKrXwK2lobTmBT6wTsrksKziJBpn/Vj0i/QUMpwqXL8Bzp5RKg==	CLOSE_TYPES
+106	eJzzNDDk0gMAAwcA4w==	FORM_ALLOW_MARKDOWN_IN_COMMENTS
+107	T[str]	TEST_EMAIL_SETTINGS
+108	T[int]25	EMAIL_PORT
+109	eJzzNDDk0gMAAwcA4w==	EMAIL_USE_TLS
+110	T[str]	DEFAULT_FROM_EMAIL
+111	T[str]/app/osqa/forum/upfiles	UPFILES_FOLDER
+112	T[str]/upfiles/	UPFILES_ALIAS
+113	eJxzM9Iz5dIDAAQ9ARQ=	ALLOW_MAX_FILE_SIZE
+114	eJxlU01zEzEMvfdXqDkw4GnScKZ0Bk5wgKEzHU5clLV218Qfi2wnLL8e2c7HFi47Xll6kt57/v4jb7dbVOqbJYwEXY4pOPOHII0mQqLfCYyXHwLUzngTE2MywQMySVkrb99PxARzyNChB6Uw7pUC9LqcfTwSy++vTLGUxzuJdsE58umM0lIPIZEk9oFr10sBhB6CRDhWTDkZhoYbN/BRrha5JeN0d16wDLUjYDqYSPo0mXEThwPpDTxdak+JSiUchpp5NGlsMGUiJksH9An2NB8Da2EpQBQka/oZ+pyy0IBdR7HNEXhA3xit8eyyxUQanHzZoN0sSXwutD/ESYboLMb4fhUY/UCrx6dX6KZ3Hx7uy+WjdEwEkuuCJq54uxlMkgC5nex9B2OYqM/WzrAWDTubtfFDEYgj2f629fvSyouibIZR6kVYGBh1xlIqI5jBC7osWRaobXMsMuzEMLKe/2+xlVJ7ZCekr1qTKRifRKXnkcRj7a/2Qa2v0A1VgEIWdo8j+bPgxRPVEULOvUSWrria4EzgosfrA/H8BjjkYZRlmHpLXardRESyxVSJxfP1INFiyexNml+I8jUsh/ZUtEWey+Di8usM/zh2DVEK28Naw09BkB1vl8Cf+/pgjiFbDdbsqUD2prgmJ5G2ULQrx/oaK/frM2KkZimleiZp6lOVay+EXkYQ80440GmZm+ntzeYv7LRkDw==	ABOUT_PAGE_TEXT
+115	eJzzNDDk0gMAAwcA4w==	USER_REPUTATION_TO_MAX_VOTES
+116	T[int]10	START_WARN_VOTES_LEFT
+117	T[int]5	MAX_FLAGS_PER_DAY
+118	T[int]3	FLAG_COUNT_TO_HIDE_POST
+119	T[int]5	FLAG_COUNT_TO_DELETE_POST
+120	T[int]1	DENY_UNVOTE_DAYS
+121	T[int]10	NICE_ANSWER_VOTES_UP
+122	T[int]10	NICE_QUESTION_VOTES_UP
+123	T[int]25	GOOD_ANSWER_VOTES_UP
+124	T[int]25	GOOD_QUESTION_VOTES_UP
+125	T[int]100	GREAT_ANSWER_VOTES_UP
+126	T[int]100	GREAT_QUESTION_VOTES_UP
+127	T[int]25	FAVORITE_QUESTION_FAVS
+128	T[int]100	STELLAR_QUESTION_FAVS
+129	eJxdzsEKwjAQBNB7v6K3QqEJKiIEPAj+QfEWkCUuTTDZhOy2+vkWPLXXNzMwYzcGwQTFtF6kGK1xQQo0DTF/ItCLh8v5dFQea37PUIpyOWnN/5H6pmjJ0oOxDrcJSUzbW7oHhrjuTavBuTyTsN7ovPZ3VHEJHDLtmBGq8xtKIM6vD58CE2+SnnOVq6WuKYdG/QAHwk7H	ROBOTS_FILE
+130	T[str]	CUSTOM_HEAD
+131	T[int]0	LIMIT_RELATED_TAGS
+132	T[str]	CUSTOM_CSS
+133	T[int]200	MAX_REP_BY_UPVOTE_DAY
+134	T[int]10	REP_GAIN_BY_EMAIL_VALIDATION
+135	T[int]1	REP_LOST_BY_DOWNVOTING
+136	T[int]15	REP_GAIN_BY_ACCEPTED
+137	T[int]2	REP_GAIN_BY_ACCEPTING
+138	T[int]2	REP_LOST_BY_FLAGGED
+139	T[int]30	REP_LOST_BY_FLAGGED_3_TIMES
+140	T[int]100	REP_LOST_BY_FLAGGED_5_TIMES
+141	T[str]	CUSTOM_HEADER
+142	T[str]markdown	CUSTOM_HEADER_RENDER_MODE
+143	T[str]	ANNOUNCEMENT_BAR
+144	T[str]markdown	ANNOUNCEMENT_BAR_RENDER_MODE
+145	T[str]	CUSTOM_FOOTER
+146	T[str]markdown	CUSTOM_FOOTER_RENDER_MODE
+147	T[str]replace	CUSTOM_FOOTER_MODE
+148	T[int]15	REP_TO_VOTE_UP
+149	T[int]100	REP_TO_VOTE_DOWN
+150	T[int]15	REP_TO_FLAG
+151	T[int]15	REP_TO_LIKE_COMMENT
+152	T[int]60	REP_TO_UPLOAD
+153	T[int]250	REP_TO_CREATE_TAGS
+154	T[int]750	REP_TO_EDIT_WIKI
+155	T[int]2000	REP_TO_WIKIFY
+156	T[int]2000	REP_TO_CONVERT_TO_COMMENT
+157	T[int]2000	REP_TO_CONVERT_COMMENTS_TO_ANSWERS
+158	T[int]2000	REP_TO_CONVERT_TO_QUESTION
+159	T[int]2000	REP_TO_VIEW_FLAGS
+160	T[int]750	REP_FOR_NO_SPAM_CHECK
+161	T[str]/app/osqa/forum_modules/exporter/backups	EXPORTER_BACKUP_STORAGE
+162	T[int]1	MAXIMUM_ACCEPTED_ANSWERS
+163	T[int]1	MAXIMUM_ACCEPTED_PER_USER
+164	eJzzNDDg0gMAAwQA4g==	USERS_CAN_ACCEPT_OWN
+165	eJzTSNEDAAFxALs=	STATIC_PAGE_REGISTRY
+166	eJzTSNEDAAFxALs=	MERGE_MAPPINGS
+168	eJzTyNEDAAGBAMM=	NODE_MAN_FILTERS
+167	eJzTSCkw5ApW93EMDol3cfT0iVTnKjDiSk5JLEktycxN5YIzCoy5NILVYyoMzGMqUlKAtGlMhWEqkE4C0oZA2giCk5MM1blKggpMuIqhxoa7unqDzTXlSkc3xBiITYDYAGqIYUxJtC9YvxlXsR4ApwIvAg==	EMAIL_DIGEST_FLAG
+88	eJzzNDDg0gMAAwQA4g==	DJSTYLE_ADMIN_INTERFACE
+\.
+
+
+--
+-- Data for Name: forum_markedtag; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_markedtag (id, tag_id, user_id, reason) FROM stdin;
+\.
+
+
+--
+-- Data for Name: forum_node; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_node (id, title, tagnames, author_id, body, node_type, parent_id, abs_parent_id, added_at, score, state_string, last_edited_id, last_activity_by_id, last_activity_at, active_revision_id, extra, extra_ref_id, extra_count, marked) FROM stdin;
+2			2	<p>In the Amazon instance, commands can only be executed by accepted users. When you attempt to use a tool on a Galaxy that has been installed on an Amazon instance, it is user "galaxy" that attempts to carry out the commands to execute the tool and provide output.</p>\n<p>User galaxy needs to be enabled as a valid user on the Amazon instance. To do this, login to the Amazon instance on Linux and execute the following command:</p>\n<p>&gt;sudo visudo</p>\n<p>This will open the file /etc/sudoers, normally highly-restricted, in a VI editor where you can make changes. In there, add the following line:</p>\n<p>galaxy ALL=(ALL) NOPASSWD: ALL</p>\n<p>Save your changes and refresh your instance. The new line will allow user galaxy to execute commands.</p>	answer	1	1	2013-01-25 16:57:40.68473	0		\N	2	2013-01-25 16:57:40.68473	2	\N	\N	0	f
+4			2	<ul>\n<li>An open-sourced, web-based platform for performing one or more bioinformatics processes.</li>\n<li>With Galaxy, a user can upload data, run a variety of bioinformatics tools, and download the results online.</li>\n<li>Multiple instances of running these tools, called jobs, can be run simultaneously.</li>\n<li>Output from jobs is stored on Galaxy, allowing any valid user to view the data.</li>\n<li>Provides a common ground for team members to view, generate, and modify data.</li>\n<li>These jobs can be reproduced and shared with other users.</li>\n<li>Jobs can be linked together into one continuous workflow, output of one job automatically submitted as the input to a subsequent job. This allows the user to accomplish a series of tool executions on a target data set with one execution on Galaxy.</li>\n<li>Workflows can be saved, allowing them to be reused and shared with others.</li>\n<li>New tools, created by third parties, can be added to Galaxy, allowing users to customize their Galaxy instance to their needs.</li>\n<li>New tools added to Galaxy have the same traits and advantages as those that Galaxy comes with.</li>\n</ul>	answer	3	3	2013-01-31 16:19:09.076282	0		\N	2	2013-01-31 16:19:09.076282	5	\N	\N	0	f
+6			2	<ul>\n<li>New tools must be added to Galaxy’s front end (user interface) and back end.</li>\n<li>Galaxy displays each tool’s user interface, where the user can define inputs and execute, as an XML file.</li>\n<li>These XML files carry out the back-end task of sending the inputs they gather to the tools they represent. They also define the name and path of the output files, which the tools must use when creating the output. This allows the output to be viewable in Galaxy.</li>\n<li>These tools are typically python scripts, stored alongside the XML files. They either carry out the tools’ functions or act as middle-man, executing the actual tool (stored elsewhere on the hosting filesystem) with the XML’s input.</li>\n<li>Each new tool (viral assembly and vigor) was given such an XML file and python script. The XML calls the python script, which in turn calls the new tool (stored in /usr/local of the host filesystem). The python script then copies the tool’s output to the path and name provided by the XML.</li>\n<li>To enable Galaxy to recognize these new tools, their XML file names were added to the file tool_conf.xml, which Galaxy refers to for acquiring all available tools.</li>\n</ul>	answer	5	5	2013-01-31 17:52:29.039879	0		\N	2	2013-01-31 17:52:29.039879	7	\N	\N	0	f
+8			2	<ul>\n<li>A python library that enables a user to call functions in a python script directly, rather than indirectly use the functions by running the script itself.</li>\n<li>A python script that imports Fabric can have standalone functions that are development for specific processes or tasks, without any extraneous code.</li>\n<li>These functions, called tasks by some, can be executed in shell or in other programs and scripts as easily as a typically standalone program.</li>\n<li>Most developers create Fabric-enabled python scripts to create one or more tasks that can be run in an automated fashion.</li>\n</ul>	answer	7	7	2013-01-31 18:19:35.716262	0		\N	2	2013-01-31 18:19:35.716262	9	\N	\N	0	f
+18	GSC project cloud team	cloud project	2	<p>team members</p>	question	\N	\N	2013-02-20 15:03:26.687228	0	(deleted)	\N	2	2013-02-20 15:03:26.687228	10	\N	\N	3	f
+19			3	<p>The proposed project aims to leverage cloud computing technology in order to democratize access to computational resources required for bioinformatic analysis of next-generation sequencing data. Utilization of data released from Genome Sequencing Centers is difficult for smaller laboratories and institutes, since they usually do not have personnel with the technical expertise to install bioinformatic pipelines, or access to computing clusters required for large-scale data analysis. The goal of this project is to deliver these resources to the genomics community, by distributing pre-configured and ready to execute viral genomic pipelines on Virtual Machine (VM) servers on the cloud. </p>\n<p>The VM servers will be available on the <a href="http://aws.amazon.com/ec2/">Amazon EC2 cloud service</a>, which provides publicly accessible, high performance computing clusters that can be rented on-demand at low cost. In addition the VM servers where developed and fully support the <a href="http://www.eucalyptus.com/">Eucalyptus cloud</a>. This project will allow researchers in laboratories worldwide and independently of institutional, economic or national boundaries to perform large scale viral sequence assembly, analysis and annotation. Users will simply need a web browser to access the cloud interface for starting the VM servers, and then run the pipelines with the viral data we will make available on the cloud or by uploading sequences generated at their laboratories. A cloud of small computational capacity will also be publicly available by JCVI at no charge for the duration of the project, allowing researchers to test the tools in a cloud environment. </p>\n<p>The VM servers will contain pre-configured the viral pipelines and all software dependencies for their execution, including the operating system, code libraries and configuration files. Researchers with access to local computing clusters will also have the option to simply download and run the VM servers in a private cloud, without need to perform any software installation for setting up the pipelines.</p>	answer	9	9	2013-02-21 12:40:42.793391	0		\N	3	2013-02-21 12:40:42.793391	12	\N	\N	0	f
+5	How are new tools added to Galaxy?	galaxy viral tools installation	2	<p>How are new tools added to Galaxy?</p>	question	\N	\N	2013-01-31 17:52:07.917194	0		\N	2	2013-01-31 17:52:29.039879	6	\N	\N	8	f
+1	How can I enable galaxy as a valid user on an Amazon instance?	amazon user galaxy permission instance	2	<p>I have added new tools to galaxy on my Amazon instance. However, when I try these new tools on Galaxy, it errors out:</p>\n<p>sudo: no tty present and no askpass program specified<br>\nSorry, try again<br>\nsh: 1: cannot create &lt;absolute path="" of="" file=""&gt;: Permission denied</p>\n<p>What is causing this?</p>	question	\N	\N	2013-01-25 16:51:31.775084	0	(deleted)	4	2	2013-01-31 16:16:55.430798	3	\N	\N	10	f
+3	What is galaxy?	galaxy	2	<p>What is galaxy?</p>	question	\N	\N	2013-01-31 16:19:03.141269	0		\N	2	2013-01-31 16:19:09.076282	4	\N	\N	8	f
+7	What is Fabric?	fabric python	2	<p>What is Fabric?</p>	question	\N	\N	2013-01-31 18:19:20.460107	0		\N	2	2013-01-31 18:19:35.716262	8	\N	\N	13	f
+21			2		answer	9	9	2013-02-21 15:54:47.615917	0	(deleted)	\N	2	2013-02-21 15:54:47.615917	19	\N	\N	0	f
+22			2		answer	9	9	2013-02-21 15:56:39.258274	0	(deleted)	\N	2	2013-02-21 15:56:39.258274	20	\N	\N	0	f
+20	Cloud Computing technology used for the Viral genomics Cloud Resource (VCR)	project cloud	3	<p>The Viral genomics Cloud Resource (VCR) builds on technology developed by <a href="http://www.jcvi.org/cms/about/bios/kkrampis">Konstantinos Krampis</a> and the efforts of the open-source <a href="https://groups.google.com/forum/?fromgroups#!forum/cloudbiolinux">community</a> around the <a href="http://cloudbiolinux.org/">Cloud BioLinux project</a>. The publication describing the core technology can be found <a href="http://www.biomedcentral.com/1471-2105/13/42">here</a>. </p>\n<p>Components of the core technology include <a href="http://galaxyproject.org/">Galaxy</a> bioinformatics web portal for providing a graphical interface for the VCR pipelines; <a href="http://usecloudman.org/">Cloudman</a> for creating virtual compute clusters on the Cloud, that allow processing of large-scale datasets in parallel; and <a href="http://docs.fabfile.org/en/1.4.0/">Fabric</a>, a software development framework for deployment of the data analysis pipelines and a large set of bioinformatic tools across private and public compute Clouds. </p>\n<p>--</p>	question	\N	\N	2013-02-21 13:10:12.551946	0		34	2	2013-05-02 18:06:03.705243	21	\N	\N	9	f
+9	Overview of the Viral genomics Cloud Resource (VCR) project.	project cloud	3	<p>The Viral genomics Cloud Resource is developed at the <a href="http://www.jcvi.org">J. Craig Venter Institute</a> (JCVI)\nand is part of the larger development for the <a href="http://gsc.jcvi.org/">JCVI Genomic Sequencing Center for \nInfectious Diseases</a> (GSCID) and funded in whole or part with federal funds from \nthe <a href="http://www.niaid.nih.gov/labsandresources/resources/dmid/gsc/Pages/default.aspx">National Institute for Infectious and Allergy and Infectious Diseases</a> (NIAID), \n<a href="http://www.nih.gov/">National Institutes of Health</a> (NIH) and <a href="http://www.hhs.gov/">Dept. of Human and Health Services</a> under \ncontract numbers N01-AI30071 and/or HHSN272200900007C. </p>	question	\N	\N	2013-02-12 17:19:41.262011	0		29	2	2013-02-21 15:56:39.258274	18	\N	\N	16	f
+23	A typical run of VCR on Galaxy.	viral galaxy	2	<p>What are the steps for a typical run of the VCR tools on Galaxy?</p>	question	\N	\N	2013-05-02 16:57:59.822405	0		\N	2	2013-05-09 14:06:57.255516	22	\N	\N	6	f
+25			2	<p>The creation of the VCR required the use of several technologies. First, a cloud, web-based environment was needed for the tools (URL to a question about the pipelines) of the VCR to be installed and made accessible to the users. For this, we employed Galaxy (see question "<a href="http://172.17.31.104/questions/3/what-is-galaxy">What is Galaxy?</a>"), an open-source, web-based platform specifically designed for bioinformatics tasks. In addition to being open-source, Galaxy provides allows easy addition of new, 3rd party tools, like those of the VCR. Galaxy also comes with several bioinformatics tools that a user may wish to apply to the same data he wants to submit to the VCR, including a means to import and export data. More about Galaxy is available <a href="https://main.g2.bx.psu.edu/">here</a>.</p>\n<p>A second technology, Python Fabric (see question “<a href="http://172.17.31.104/questions/7/what-is-fabric">What is Fabric?</a>”), was employed to facilitate an easy means of installing the entire VCR. Python Fabric scripts were developed, containing functions that require no inputs and can be executed in an automated fashion. These functions perform the following tasks:</p>\n<ol>\n<li>Installing Galaxy on an existing cloud.</li>\n<li>Installing the VCR tools on the same cloud.</li>\n<li>Linking the VCR tools to Galaxy, allowing users to see the VCR tools as options on Galaxy’s web-interface.</li>\n</ol>\n<p>More about Fabric is available <a href="http://docs.fabfile.org/en/1.5/">here</a>.</p>\n<p>Finally, the VCR tools are comprised of and require several programs, libraries, and other such\ndependencies. In order to have easy access to these dependencies during installation, the online repository Github was employed. Like SVN and CVS, Github allows authorized users to upload and download files stored online. The functions in the Python Fabric scripts access the VCR Github repository to download the necessary files of the VCR tools and install them in their proper location on the target cloud. More about Github can be found <a href="https://github.com/">here</a>.</p>	answer	20	20	2013-05-02 18:03:04.841692	0		40	2	2013-05-02 18:06:03.705243	26	\N	\N	0	f
+26	What tools does the VCR project offer?	project cloud	2	<p>What tools does the VCR project offer?</p>	question	\N	\N	2013-05-02 18:07:28.282817	0		\N	2	2013-05-02 18:09:08.135131	27	\N	\N	2	f
+24			2	<p>A typical run of the VCR tools will start with importing the necessary input files, then executing the tools of Viral Assembly and Annotation, Viral Assembly &amp; VIGOR, respectively.</p>\n<p>Here is the step-by-step process:</p>\n<ol>\n<li>At the main page (after logging in) choose tool <strong>Get Data-&gt;Upload File</strong>.</li>\n<li>Choose "sff" in <em>File Format</em>.</li>\n<li>In <em>File</em>, browse for and choose the SFF file for the Viral Assembly stage of your run.</li>\n<li>Click Execute.</li>\n<li>Repeat steps 1-4 for each of the remaining inputs: Choose <em>File Format</em> value "fasta" for Sanger input, "fastq" for input Solexa, and "tabular" for input trimpoints of input Solexa.</li>\n<li>When all import jobs are complete, each file will appear as an item in the History list. Choose tool <strong>Viral Assembly and Annotation-&gt;Viral Assembly</strong>.</li>\n<li>Each input file has a dropdown menu where all imported files of the matching type are listed (i.e. dropdown <em>454 reads</em> lists all imported SFF files). Select the matching file from the History list for each dropdown.</li>\n<li>Select the desired database from the last dropdown ("Viral database").</li>\n<li>Click Execute.</li>\n<li>When Viral Assembly is finished, the output FASTA file will appear in the History list. Choose tool <strong>Viral Assembly and Annotation-&gt;VIGOR</strong>.</li>\n<li>Choose Viral Assembly's output FASTA file from the History list in the <em>Input FASTA</em> dropdown.</li>\n<li>Click Execute.</li>\n<li>Among VIGOR's outputs is the JBrowse visualization of VIGOR's annotation of the input FASTA. The History item will be named "JBrowse of VIGOR on [name of input FASTA]". Click the eye icon on the History item to view the visualization.</li>\n</ol>	answer	23	23	2013-05-02 17:56:53.189203	0		43	2	2013-05-09 14:06:57.255516	29	\N	\N	0	f
+27			2	<p>The GSC Cloud Computing Project's objective is to create a cloud computing environment, supplementing the existing tools created by Galaxy and Cloud BioLinux with new tools designed for viral genomics. These new tools are as follows.</p>\n<p>The first tool, Viral Assembly, consists of a pipeline that processes input viral reads, comparing them against appropriate reference viral genomes using tBLASTX, and reads deemed to be chimeric based on the reference are  discarded. The remaining reads are de novo assembled using BWA and Samtools, and then binned by genome segment. A set of the best consensus sequences from the assembly (the number of consensus sequences chosen depends on the genome segments for the virus species), are used in a BLASTN search against a database of full length sequences. After finding the best reference genome from the BLASTN results, mapping assembly is performed in order to identify polymorphic regions in the sequenced genome. Those polymorphic regions that are confirmed are used to edit the reference viral genomes, which are then presented as new genome sequences as an output FASTA file.</p>\n<p>The second tool, Viral Annotation, employs two pipelines. The first one, VIGOR, performs annotation on a given FASTA file, mainly intended for the output FASTA file of the Viral Assembly pipeline. The assembled genomes of the Viral Assembly's output are given as input to the JCVI VIGOR pipeline (Viral Genome ORF Reader, <a href="http://jcvi.org/vigor/">http://jcvi.org/vigor/</a>), which performs gene prediction in influenza virus, rotavirus, rhinovirus and coronavirus subtypes. VIGOR detects protein coding regions using BLAST searches to reference sequences, identifies novel features such as frame shifts, overlapping and embedded genes, while it also can provide genotyping for influenza and rotavirus.</p>\n<p>The data created by the VIGOR pipeline is directly submitted to the third pipeline, Visualization. This pipeline provides graphical representation of the genomic annotations created by the VIGOR pipeline. The pipeline uses the Apollo (<a href="http://apollo.berkeleybop.org">http://apollo.berkeleybop.org</a>) genomic annotation viewer and editor, which was originally developed as part of the Berkeley Drosophila Genome Project. Apollo has been used for annotating the finished Drosophila melanogaster genome, and as a platform for sharing these annotations with the community. Apollo provides researchers with a multi-featured graphical environment to explore genomic annotations at many levels of detail and to also perform annotation curation. Since it was developed from the beginning to serve the needs of groups working on different organisms with different types of data, it was specifically designed to be flexible and extensible.</p>\n<p>These tools, utilizing a total of three, high-throughput, and computer-intensive pipelines, will be free and publicly available for all users, regardless of their in-house capacity.</p>	answer	26	26	2013-05-02 18:09:08.135131	0		\N	2	2013-05-02 18:09:08.135131	28	\N	\N	0	f
+\.
+
+
+--
+-- Data for Name: forum_node_tags; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_node_tags (id, node_id, tag_id) FROM stdin;
+3	18	11
+4	18	12
+5	9	11
+6	9	12
+7	20	11
+8	20	12
+9	23	4
+10	23	6
+11	26	11
+12	26	12
+\.
+
+
+--
+-- Data for Name: forum_noderevision; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_noderevision (id, node_id, body, author_id, tagnames, title, summary, revised_at, revision) FROM stdin;
+1	9	Overview of of the GSC Cloud Computing Project	3	cloud project	Overview of of the GSC Cloud Computing Project		2013-02-12 17:19:41.265293	1
+10	18	team members	2	cloud project	GSC project cloud team		2013-02-20 15:03:26.69391	1
+11	9	Overview of of the GSC Cloud Computing Project	2	project cloud	Overview of the Viral genomics Cloud Resource		2013-02-21 12:29:11.977906	2
+12	19	The proposed project aims to leverage cloud computing technology in order to democratize access to computational resources required for bioinformatic analysis of next-generation sequencing data. Utilization of data released from Genome Sequencing Centers is difficult for smaller laboratories and institutes, since they usually do not have personnel with the technical expertise to install bioinformatic pipelines, or access to computing clusters required for large-scale data analysis. The goal of this project is to deliver these resources to the genomics community, by distributing pre-configured and ready to execute viral genomic pipelines on Virtual Machine (VM) servers on the cloud. \r\n\r\nThe VM servers will be available on the [Amazon EC2 cloud service][1], which provides publicly accessible, high performance computing clusters that can be rented on-demand at low cost. In addition the VM servers where developed and fully support the [Eucalyptus cloud][2]. This project will allow researchers in laboratories worldwide and independently of institutional, economic or national boundaries to perform large scale viral sequence assembly, analysis and annotation. Users will simply need a web browser to access the cloud interface for starting the VM servers, and then run the pipelines with the viral data we will make available on the cloud or by uploading sequences generated at their laboratories. A cloud of small computational capacity will also be publicly available by JCVI at no charge for the duration of the project, allowing researchers to test the tools in a cloud environment. \r\n\r\nThe VM servers will contain pre-configured the viral pipelines and all software dependencies for their execution, including the operating system, code libraries and configuration files. Researchers with access to local computing clusters will also have the option to simply download and run the VM servers in a private cloud, without need to perform any software installation for setting up the pipelines.\r\n\r\n\r\n  [1]: http://aws.amazon.com/ec2/\r\n  [2]: http://www.eucalyptus.com/	3				2013-02-21 12:40:42.800589	1
+13	9	The Viral genomics Cloud Resource is developed at the J. Craig Venter Institute ([JCVI][1]),\r\nand is part of the larger development for the JCVI Genomic Sequencing Center for \r\nInfectious Diseases ([GSCID][2]) and funded in whole or part with federal funds from \\\r\nNAID, NIH and DHHS under contract numbers N01-AI30071 and/or HHSN272200900007C. \r\n\r\n	3	project cloud	Overview of the Viral genomics Cloud Resource		2013-02-21 12:43:42.903263	3
+14	9	The Viral genomics Cloud Resource is developed at the J. Craig Venter Institute ([JCVI][1]),\r\nand is part of the larger development for the JCVI Genomic Sequencing Center for \r\nInfectious Diseases ([GSCID][1]) and funded in whole or part with federal funds from \\\r\nNAID, NIH and DHHS under contract numbers N01-AI30071 and/or HHSN272200900007C. \r\n\r\n	3	project cloud	Overview of the Viral genomics Cloud Resource		2013-02-21 12:44:19.607798	4
+15	9	The Viral genomics Cloud Resource is developed at the [J. Craig Venter Institute][1] (JCVI)\r\nand is part of the larger development for the [JCVI Genomic Sequencing Center for \r\nInfectious Diseases][2] (GSCID) and funded in whole or part with federal funds from \r\nthe [National Institute for Infectious and Allergy and Infectious Diseases][3] (NIAID), \r\n[National Institutes of Health][4] (NIH) and [Dept. of Human and Health Services][5] under \r\ncontract numbers N01-AI30071 and/or HHSN272200900007C. \r\n\r\n\r\n  [1]: http://www.jcvi.org\r\n  [2]: http://gsc.jcvi.org/\r\n  [3]: http://www.niaid.nih.gov/labsandresources/resources/dmid/gsc/Pages/default.aspx\r\n  [4]: http://www.nih.gov/\r\n  [5]: http://www.hhs.gov/	3	project cloud	Overview of the Viral genomics Cloud Resource		2013-02-21 12:49:34.940113	5
+16	20	The Viral genomics Cloud Resource (VCR) builds on technology developed by [Konstantinos Krampis][1] and the efforts of the open-source [community][2] around the [Cloud BioLinux project][3]. The publication describing the core technology can be found [here][4]. \r\n\r\nComponents of the core technology include [Galaxy][5] bioinformatics web portal for providing a graphical interface for the VCR pipelines; [Cloudman][6] for creating virtual compute clusters on the Cloud, that allow processing of large-scale datasets in parallel; and [Fabric][7], a software development framework for deployment of the data analysis pipelines and a large set of bioinformatic tools across private and public compute Clouds. \r\n\r\n\r\n  [1]: http://www.jcvi.org/cms/about/bios/kkrampis\r\n  [2]: https://groups.google.com/forum/?fromgroups#!forum/cloudbiolinux\r\n  [3]: http://cloudbiolinux.org/\r\n  [4]: http://www.biomedcentral.com/1471-2105/13/42\r\n  [5]: http://galaxyproject.org/\r\n  [6]: http://usecloudman.org/\r\n  [7]: http://docs.fabfile.org/en/1.4.0/	3	project cloud	Cloud Computing technology used for the Viral genomics Cloud Resource		2013-02-21 13:10:12.557529	1
+17	20	The Viral genomics Cloud Resource (VCR) builds on technology developed by [Konstantinos Krampis][1] and the efforts of the open-source [community][2] around the [Cloud BioLinux project][3]. The publication describing the core technology can be found [here][4]. \r\n\r\nComponents of the core technology include [Galaxy][5] bioinformatics web portal for providing a graphical interface for the VCR pipelines; [Cloudman][6] for creating virtual compute clusters on the Cloud, that allow processing of large-scale datasets in parallel; and [Fabric][7], a software development framework for deployment of the data analysis pipelines and a large set of bioinformatic tools across private and public compute Clouds. \r\n\r\n\r\n  [1]: http://www.jcvi.org/cms/about/bios/kkrampis\r\n  [2]: https://groups.google.com/forum/?fromgroups#!forum/cloudbiolinux\r\n  [3]: http://cloudbiolinux.org/\r\n  [4]: http://www.biomedcentral.com/1471-2105/13/42\r\n  [5]: http://galaxyproject.org/\r\n  [6]: http://usecloudman.org/\r\n  [7]: http://docs.fabfile.org/en/1.4.0/	3	project cloud	Cloud Computing technology used for the Viral genomics Cloud Resource (VCR)		2013-02-21 13:10:28.33986	2
+18	9	The Viral genomics Cloud Resource is developed at the [J. Craig Venter Institute][1] (JCVI)\r\nand is part of the larger development for the [JCVI Genomic Sequencing Center for \r\nInfectious Diseases][2] (GSCID) and funded in whole or part with federal funds from \r\nthe [National Institute for Infectious and Allergy and Infectious Diseases][3] (NIAID), \r\n[National Institutes of Health][4] (NIH) and [Dept. of Human and Health Services][5] under \r\ncontract numbers N01-AI30071 and/or HHSN272200900007C. \r\n\r\n\r\n  [1]: http://www.jcvi.org\r\n  [2]: http://gsc.jcvi.org/\r\n  [3]: http://www.niaid.nih.gov/labsandresources/resources/dmid/gsc/Pages/default.aspx\r\n  [4]: http://www.nih.gov/\r\n  [5]: http://www.hhs.gov/	3	project cloud	Overview of the Viral genomics Cloud Resource (VCR) project.		2013-02-21 13:11:23.069309	6
+19	21	The purpose of the GSC Cloud Computing Project is to provide a new means of executing various bioinformatic tasks, particularly those under the Genome Sequencing Centers (GSC) project, by utilizing cloud computing technology to democratize access to computational resources required for bioinformatic analysis of next-generation sequencing (NGS) data. \r\n\r\nThe data and tasks involved with NGS can create a high expense for an organization that attempts to build and maintain an in-house, bioinformatics infrastructure. NGS datasets can be enormous in size. For example, the un-assembled reads returned from a single lane of the Illumina GAIIx instrument after base calling, are approximately 100 GigaByte (GB) in size. This can be problematic, as publicly available online sequence analysis tools such as those from the NCBI website, cannot accept input sequence data files of more than 0.5 GB.\r\n\r\nEven if this problem were resolved, there is still the matter of the computational, hardware, and associated maintenance costs. NGS bioinformatics task have a varying demand for compute resources (i.e. genome assembly/whole genome alignments require extensive compute resources, genome annotation/browsing require less). Acquiring the funds to build and maintain an infrastructure that can optimally handle such complexity can be challenge, especially for smaller laboratories. This problem is further complicated because the public sequence databases are constantly growing in size, requiring the infrastructure to acquire more space and bandwidth periodically to accommodate them. Furthermore, an NGS bioinformatics infrastructure requires trained bioinformaticians for installation, configuration, and maintainence, raising the expenses higher.\r\n\r\nAn alternate, less expensive option is to obtain the computational capacity of a cloud computing service, such as Galaxy. Such services handle the issues of software, hardware, and maintenance themselves. Instead, users renting computer servers on the cloud pay based on the amount of computational capacity consumed on an hourly basis. This may be a more suitable arrangement for smaller organizations, who may not have the funding to justify creating an in-house infrastructure. And since cloud service can be found worldwide, users anywhere can make use of cloud computing.\r\n\r\nAn additional advantage is the ability to share data more easily with collaborators. The data submitted to and produced by cloud computing is accessible online (to those with proper credentials). Therefore, all members of the same project can simply log-in online to view, share, and manipulate the same data. This would be less feasible when dealing with multiple in-house infrastructures between members of different organizations, especially when the data is too large to transfer conveniently.\r\n\r\nThe GSC Cloud Computing Project's objective is to create a cloud computing environment, supplementing the existing environment created by Galaxy and Cloud BioLinux. In addition to the standard tools provided by Galaxy and Cloud BioLinux, this project will include three new GSC pipelines for analysis of viral genome data:\r\n\r\nThe first pipeline, Viral Assembly, processes input viral reads, comparing them against appropriate reference viral genomes using tBLASTX, and reads deemed to be chineric based on the reference are  discared. The remaining reads are de novo assembled using BWA and Samtools, and then binned by genome segment. A set of the best consensus sequences from the assembly (the number of consensus sequences chosen depends on the genome segments for the virus species), are used in a BLASTN search against a database of full length sequences. After finding the best reference genome from the BLASTN results, mapping assembly is performed in order to identify polymorphic regions in the sequenced genome. Those polymorphic regions that are confirmed are used to edit the reference viral genomes, which are then presented as new genome sequences as an output FASTA file.\r\n\r\nThe second pipeline, VIGOR, performs annotation on a given FASTA file, mainly intended for the output FASTA file of the Viral Assembly pipeline. The assembled genomes of the Viral Assembly's output are given as input to the JCVI VIGOR pipeline (Viral Genome ORF Reader, http://jcvi.org/vigor/), which performs gene prediction in influenza virus, rotavirus, rhinovirus and coronavirus subtypes. VIGOR detects protein coding regions using BLAST searches to reference sequences, identifies novel features such as frame shifts, overlapping and embedded genes, while it also can provide genotyping for influenza and rotavirus.\r\n\r\nThe third pipeline, Visualization, provides graphical representation of the genomic annotations created by the VIGOR pipeline. The pipeline uses the Apollo (http://apollo.berkeleybop.org) genomic annotation viewer and editor, which was originally developed as part of the Berkeley Drosophila Genome Project. Apollo has been used for annotating the finished Drosophila melanogaster genome, and as a platform for sharing these annotations with the community. Apollo provides researchers with a multi-featured graphical environment to explore genomic annotations at many levels of detail and to also perform annotation curation. Since it was developed from the beginning to serve the needs of groups working on different organisms with different types of data, it was specifically designed to be flexible and extensible.\r\n\r\nAll three pipelines, high-throughput and computer-intensive, will be available as free, publicly available tools that all users, regardless of their in-house capacity, can make use of.	2				2013-02-21 15:54:47.633189	1
+20	22	The purpose of the GSC Cloud Computing Project is to provide a new means of executing various bioinformatic tasks, particularly those under the Genome Sequencing Centers (GSC) project, by utilizing cloud computing technology to democratize access to computational resources required for bioinformatic analysis of next-generation sequencing (NGS) data. \r\n\r\nThe data and tasks involved with NGS can create a high expense for an organization that attempts to build and maintain an in-house, bioinformatics infrastructure. NGS datasets can be enormous in size. For example, the un-assembled reads returned from a single lane of the Illumina GAIIx instrument after base calling, are approximately 100 GigaByte (GB) in size. This can be problematic, as publicly available online sequence analysis tools such as those from the NCBI website, cannot accept input sequence data files of more than 0.5 GB.\r\n\r\nEven if this problem were resolved, there is still the matter of the computational, hardware, and associated maintenance costs. NGS bioinformatics task have a varying demand for compute resources (i.e. genome assembly/whole genome alignments require extensive compute resources, genome annotation/browsing require less). Acquiring the funds to build and maintain an infrastructure that can optimally handle such complexity can be challenge, especially for smaller laboratories. This problem is further complicated because the public sequence databases are constantly growing in size, requiring the infrastructure to acquire more space and bandwidth periodically to accommodate them. Furthermore, an NGS bioinformatics infrastructure requires trained bioinformaticians for installation, configuration, and maintainence, raising the expenses higher.\r\n\r\nAn alternate, less expensive option is to obtain the computational capacity of a cloud computing service, such as Galaxy. Such services handle the issues of software, hardware, and maintenance themselves. Instead, users renting computer servers on the cloud pay based on the amount of computational capacity consumed on an hourly basis. This may be a more suitable arrangement for smaller organizations, who may not have the funding to justify creating an in-house infrastructure. And since cloud service can be found worldwide, users anywhere can make use of cloud computing.\r\n\r\nAn additional advantage is the ability to share data more easily with collaborators. The data submitted to and produced by cloud computing is accessible online (to those with proper credentials). Therefore, all members of the same project can simply log-in online to view, share, and manipulate the same data. This would be less feasible when dealing with multiple in-house infrastructures between members of different organizations, especially when the data is too large to transfer conveniently.\r\n\r\nThe GSC Cloud Computing Project's objective is to create a cloud computing environment, supplementing the existing environment created by Galaxy and Cloud BioLinux. In addition to the standard tools provided by Galaxy and Cloud BioLinux, this project will include three new GSC pipelines for analysis of viral genome data:\r\n\r\nThe first pipeline, Viral Assembly, processes input viral reads, comparing them against appropriate reference viral genomes using tBLASTX, and reads deemed to be chineric based on the reference are  discared. The remaining reads are de novo assembled using BWA and Samtools, and then binned by genome segment. A set of the best consensus sequences from the assembly (the number of consensus sequences chosen depends on the genome segments for the virus species), are used in a BLASTN search against a database of full length sequences. After finding the best reference genome from the BLASTN results, mapping assembly is performed in order to identify polymorphic regions in the sequenced genome. Those polymorphic regions that are confirmed are used to edit the reference viral genomes, which are then presented as new genome sequences as an output FASTA file.\r\n\r\nThe second pipeline, VIGOR, performs annotation on a given FASTA file, mainly intended for the output FASTA file of the Viral Assembly pipeline. The assembled genomes of the Viral Assembly's output are given as input to the JCVI VIGOR pipeline (Viral Genome ORF Reader, http://jcvi.org/vigor/), which performs gene prediction in influenza virus, rotavirus, rhinovirus and coronavirus subtypes. VIGOR detects protein coding regions using BLAST searches to reference sequences, identifies novel features such as frame shifts, overlapping and embedded genes, while it also can provide genotyping for influenza and rotavirus.\r\n\r\nThe third pipeline, Visualization, provides graphical representation of the genomic annotations created by the VIGOR pipeline. The pipeline uses the Apollo (http://apollo.berkeleybop.org) genomic annotation viewer and editor, which was originally developed as part of the Berkeley Drosophila Genome Project. Apollo has been used for annotating the finished Drosophila melanogaster genome, and as a platform for sharing these annotations with the community. Apollo provides researchers with a multi-featured graphical environment to explore genomic annotations at many levels of detail and to also perform annotation curation. Since it was developed from the beginning to serve the needs of groups working on different organisms with different types of data, it was specifically designed to be flexible and extensible.\r\n\r\nAll three pipelines, high-throughput and computer-intensive, will be available as free, publicly available tools that all users, regardless of their in-house capacity, can make use of.	2				2013-02-21 15:56:39.27544	1
+21	20	The Viral genomics Cloud Resource (VCR) builds on technology developed by [Konstantinos Krampis][1] and the efforts of the open-source [community][2] around the [Cloud BioLinux project][3]. The publication describing the core technology can be found [here][4]. \r\n\r\nComponents of the core technology include [Galaxy][5] bioinformatics web portal for providing a graphical interface for the VCR pipelines; [Cloudman][6] for creating virtual compute clusters on the Cloud, that allow processing of large-scale datasets in parallel; and [Fabric][7], a software development framework for deployment of the data analysis pipelines and a large set of bioinformatic tools across private and public compute Clouds. \r\n\r\n\r\n  [1]: http://www.jcvi.org/cms/about/bios/kkrampis\r\n  [2]: https://groups.google.com/forum/?fromgroups#!forum/cloudbiolinux\r\n  [3]: http://cloudbiolinux.org/\r\n  [4]: http://www.biomedcentral.com/1471-2105/13/42\r\n  [5]: http://galaxyproject.org/\r\n  [6]: http://usecloudman.org/\r\n  [7]: http://docs.fabfile.org/en/1.4.0/\r\n\r\n\r\n--	3	project cloud	Cloud Computing technology used for the Viral genomics Cloud Resource (VCR)		2013-03-05 00:14:14.486397	3
+22	23	What are the steps for a typical run of the VCR tools on Galaxy?	2	viral galaxy	A typical run of VCR on Galaxy.		2013-05-02 16:57:59.84058	1
+23	24	A typical run of the VCR tools will start with importing the necessary input files, then executing the tools of Viral Assembly and Annotation, Viral Assembly & VIGOR, respectively.\r\n\r\nHere is the step-by-step process:\r\n\r\n 1. At the main page (after logging in) choose tool **Get Data->Upload File**.\r\n 2. Choose "sff" in *File Format*.\r\n 3. In *File*, browse for and choose the SFF file for the Viral Assembly stage of your run.\r\n 4. Click Execute.\r\n 5. Repeat steps 1-4 for each of the remaining inputs: Choose *File Format* value "fasta" for Sanger input, "fastq" for input Solexa, and "tabular" for input trimpoints of input Solexa.\r\n 6. When all import jobs are complete, each file will appear as an item in the History list. Choose tool **Viral Assembly and Annotation->Viral Assembly**.\r\n 7. Each input file has a dropdown menu where all imported files of the matching type are listed (i.e. dropdown *454 reads* lists all imported SFF files). Select the matching file from the History list for each dropdown.\r\n 8. Select the desired database from the last dropdown ("Viral database").\r\n 9. Click Execute. IMPORTANT NOTE: Viral Assembly has a long turn-around time (~1 hr).\r\n 10. When Viral Assembly is finished, the output FASTA file will appear in the History list. Choose tool **Viral Assembly and Annotation->VIGOR**.\r\n 11. Choose Viral Assembly's output FASTA file from the History list in the *Input FASTA* dropdown.\r\n 12. Click Execute.\r\n 13. Among VIGOR's outputs is the JBrowse visualization of VIGOR's annotation of the input FASTA. The History item will be named "JBrowse of VIGOR on [name of input FASTA]". Click the eye icon on the History item to view the visualization.	2				2013-05-02 17:56:53.192106	1
+24	25	The creation of the VCR required the use of several technologies. First, a cloud, web-based environment was needed for the tools (URL to a question about the pipelines) of the VCR to be installed and made accessible to the users. For this, we employed Galaxy (URL for Galaxy and/or our question “What is Galaxy?”), an open-source, web-based platform specifically designed for bioinformatics tasks. In addition to being open-source, Galaxy provides allows easy addition of new, 3rd party tools, like those of the VCR. Galaxy also comes with several bioinformatics tools that a user may wish to apply to the same data he wants to submit to the VCR, including a means to import and export data. More about Galaxy is available [here][1].\r\n\r\nA second technology, Python Fabric (URL for Fabric and/or our question “What is Fabric?”), was employed to facilitate an easy means of installing the entire VCR. Python Fabric scripts were developed, containing functions that require no inputs and can be executed in an automated fashion. These functions perform the following tasks:\r\n\r\n1.\tInstalling Galaxy on an existing cloud.\r\n2.\tInstalling the VCR tools on the same cloud.\r\n3.\tLinking the VCR tools to Galaxy, allowing users to see the VCR tools as options on Galaxy’s web-interface.\r\n\r\nMore about Fabric is available [here][2].\r\n\r\nFinally, the VCR tools are comprised of and require several programs, libraries, and other such\r\ndependencies. In order to have easy access to these dependencies during installation, the online repository Github was employed. Like SVN and CVS, Github allows authorized users to upload and download files stored online. The functions in the Python Fabric scripts access the VCR Github repository to download the necessary files of the VCR tools and install them in their proper location on the target cloud. More about Github can be found [here][3].\r\n\r\n\r\n  [1]: https://main.g2.bx.psu.edu/\r\n  [2]: http://docs.fabfile.org/en/1.5/\r\n  [3]: https://github.com/	2				2013-05-02 18:03:04.84451	1
+25	25	The creation of the VCR required the use of several technologies. First, a cloud, web-based environment was needed for the tools (URL to a question about the pipelines) of the VCR to be installed and made accessible to the users. For this, we employed Galaxy (see question "[What is Galaxy?][1]"), an open-source, web-based platform specifically designed for bioinformatics tasks. In addition to being open-source, Galaxy provides allows easy addition of new, 3rd party tools, like those of the VCR. Galaxy also comes with several bioinformatics tools that a user may wish to apply to the same data he wants to submit to the VCR, including a means to import and export data. More about Galaxy is available [here][2].\r\n\r\nA second technology, Python Fabric (URL for Fabric and/or our question “What is Fabric?”), was employed to facilitate an easy means of installing the entire VCR. Python Fabric scripts were developed, containing functions that require no inputs and can be executed in an automated fashion. These functions perform the following tasks:\r\n\r\n1.\tInstalling Galaxy on an existing cloud.\r\n2.\tInstalling the VCR tools on the same cloud.\r\n3.\tLinking the VCR tools to Galaxy, allowing users to see the VCR tools as options on Galaxy’s web-interface.\r\n\r\nMore about Fabric is available [here][3].\r\n\r\nFinally, the VCR tools are comprised of and require several programs, libraries, and other such\r\ndependencies. In order to have easy access to these dependencies during installation, the online repository Github was employed. Like SVN and CVS, Github allows authorized users to upload and download files stored online. The functions in the Python Fabric scripts access the VCR Github repository to download the necessary files of the VCR tools and install them in their proper location on the target cloud. More about Github can be found [here][4].\r\n\r\n\r\n  [1]: http://172.17.31.104/questions/3/what-is-galaxy\r\n  [2]: https://main.g2.bx.psu.edu/\r\n  [3]: http://docs.fabfile.org/en/1.5/\r\n  [4]: https://github.com/	2				2013-05-02 18:05:13.43827	2
+26	25	The creation of the VCR required the use of several technologies. First, a cloud, web-based environment was needed for the tools (URL to a question about the pipelines) of the VCR to be installed and made accessible to the users. For this, we employed Galaxy (see question "[What is Galaxy?][1]"), an open-source, web-based platform specifically designed for bioinformatics tasks. In addition to being open-source, Galaxy provides allows easy addition of new, 3rd party tools, like those of the VCR. Galaxy also comes with several bioinformatics tools that a user may wish to apply to the same data he wants to submit to the VCR, including a means to import and export data. More about Galaxy is available [here][2].\r\n\r\nA second technology, Python Fabric (see question “[What is Fabric?][3]”), was employed to facilitate an easy means of installing the entire VCR. Python Fabric scripts were developed, containing functions that require no inputs and can be executed in an automated fashion. These functions perform the following tasks:\r\n\r\n1.\tInstalling Galaxy on an existing cloud.\r\n2.\tInstalling the VCR tools on the same cloud.\r\n3.\tLinking the VCR tools to Galaxy, allowing users to see the VCR tools as options on Galaxy’s web-interface.\r\n\r\nMore about Fabric is available [here][4].\r\n\r\nFinally, the VCR tools are comprised of and require several programs, libraries, and other such\r\ndependencies. In order to have easy access to these dependencies during installation, the online repository Github was employed. Like SVN and CVS, Github allows authorized users to upload and download files stored online. The functions in the Python Fabric scripts access the VCR Github repository to download the necessary files of the VCR tools and install them in their proper location on the target cloud. More about Github can be found [here][5].\r\n\r\n\r\n  [1]: http://172.17.31.104/questions/3/what-is-galaxy\r\n  [2]: https://main.g2.bx.psu.edu/\r\n  [3]: http://172.17.31.104/questions/7/what-is-fabric\r\n  [4]: http://docs.fabfile.org/en/1.5/\r\n  [5]: https://github.com/	2				2013-05-02 18:06:03.663102	3
+27	26	What tools does the VCR project offer?	2	project cloud	What tools does the VCR project offer?		2013-05-02 18:07:28.285822	1
+28	27	The GSC Cloud Computing Project's objective is to create a cloud computing environment, supplementing the existing tools created by Galaxy and Cloud BioLinux with new tools designed for viral genomics. These new tools are as follows.\r\n\r\nThe first tool, Viral Assembly, consists of a pipeline that processes input viral reads, comparing them against appropriate reference viral genomes using tBLASTX, and reads deemed to be chimeric based on the reference are  discarded. The remaining reads are de novo assembled using BWA and Samtools, and then binned by genome segment. A set of the best consensus sequences from the assembly (the number of consensus sequences chosen depends on the genome segments for the virus species), are used in a BLASTN search against a database of full length sequences. After finding the best reference genome from the BLASTN results, mapping assembly is performed in order to identify polymorphic regions in the sequenced genome. Those polymorphic regions that are confirmed are used to edit the reference viral genomes, which are then presented as new genome sequences as an output FASTA file.\r\n\r\nThe second tool, Viral Annotation, employs two pipelines. The first one, VIGOR, performs annotation on a given FASTA file, mainly intended for the output FASTA file of the Viral Assembly pipeline. The assembled genomes of the Viral Assembly's output are given as input to the JCVI VIGOR pipeline (Viral Genome ORF Reader, http://jcvi.org/vigor/), which performs gene prediction in influenza virus, rotavirus, rhinovirus and coronavirus subtypes. VIGOR detects protein coding regions using BLAST searches to reference sequences, identifies novel features such as frame shifts, overlapping and embedded genes, while it also can provide genotyping for influenza and rotavirus.\r\n\r\nThe data created by the VIGOR pipeline is directly submitted to the third pipeline, Visualization. This pipeline provides graphical representation of the genomic annotations created by the VIGOR pipeline. The pipeline uses the Apollo (http://apollo.berkeleybop.org) genomic annotation viewer and editor, which was originally developed as part of the Berkeley Drosophila Genome Project. Apollo has been used for annotating the finished Drosophila melanogaster genome, and as a platform for sharing these annotations with the community. Apollo provides researchers with a multi-featured graphical environment to explore genomic annotations at many levels of detail and to also perform annotation curation. Since it was developed from the beginning to serve the needs of groups working on different organisms with different types of data, it was specifically designed to be flexible and extensible.\r\n\r\nThese tools, utilizing a total of three, high-throughput, and computer-intensive pipelines, will be free and publicly available for all users, regardless of their in-house capacity.	2				2013-05-02 18:09:08.137895	1
+29	24	A typical run of the VCR tools will start with importing the necessary input files, then executing the tools of Viral Assembly and Annotation, Viral Assembly & VIGOR, respectively.\r\n\r\nHere is the step-by-step process:\r\n\r\n 1. At the main page (after logging in) choose tool **Get Data->Upload File**.\r\n 2. Choose "sff" in *File Format*.\r\n 3. In *File*, browse for and choose the SFF file for the Viral Assembly stage of your run.\r\n 4. Click Execute.\r\n 5. Repeat steps 1-4 for each of the remaining inputs: Choose *File Format* value "fasta" for Sanger input, "fastq" for input Solexa, and "tabular" for input trimpoints of input Solexa.\r\n 6. When all import jobs are complete, each file will appear as an item in the History list. Choose tool **Viral Assembly and Annotation->Viral Assembly**.\r\n 7. Each input file has a dropdown menu where all imported files of the matching type are listed (i.e. dropdown *454 reads* lists all imported SFF files). Select the matching file from the History list for each dropdown.\r\n 8. Select the desired database from the last dropdown ("Viral database").\r\n 9. Click Execute.\r\n 10. When Viral Assembly is finished, the output FASTA file will appear in the History list. Choose tool **Viral Assembly and Annotation->VIGOR**.\r\n 11. Choose Viral Assembly's output FASTA file from the History list in the *Input FASTA* dropdown.\r\n 12. Click Execute.\r\n 13. Among VIGOR's outputs is the JBrowse visualization of VIGOR's annotation of the input FASTA. The History item will be named "JBrowse of VIGOR on [name of input FASTA]". Click the eye icon on the History item to view the visualization.	2				2013-05-09 14:06:57.133467	2
+\.
+
+
+--
+-- Data for Name: forum_nodestate; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_nodestate (id, node_id, state_type, action_id) FROM stdin;
+1	18	deleted	20
+2	21	deleted	32
+3	22	deleted	33
+4	1	deleted	35
+\.
+
+
+--
+-- Data for Name: forum_openidassociation; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_openidassociation (id, server_url, handle, secret, issued, lifetime, assoc_type) FROM stdin;
+1	https://open.login.yahooapis.com/openid/op/auth	roNStu0TurLSJfuCp7rXYsRt0CyDTQlxgskep4Kl3qyQQbZQ5l6L.DAcTZWZCPxd4.TNuWjrnHW6DW.RxjKOrAleEPJfmKC5V6jGT_9rWuvCi.b4iImDlEL_gw_tWX6Q6Q--	9wiHgYN/U9WdaSdHoVrFc0N1NRc=\n	1360707415	1360707415	HMAC-SHA1
+\.
+
+
+--
+-- Data for Name: forum_openidnonce; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_openidnonce (id, server_url, "timestamp", salt) FROM stdin;
+1	https://open.login.yahooapis.com/openid/op/auth	1360707435	q7J0FlumaWHGj_.EzVizcDrgIqLp2Q3BoA--
+\.
+
+
+--
+-- Data for Name: forum_questionsubscription; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_questionsubscription (id, user_id, question_id, auto_subscription, last_view) FROM stdin;
+1	2	1	t	2013-02-28 18:43:46.878274
+2	2	3	t	2013-02-28 20:11:11.70749
+5	3	9	t	2013-02-21 16:37:47.259566
+6	2	18	t	2013-02-21 12:20:07.604961
+7	3	20	t	2013-03-05 00:14:14.643424
+8	2	9	t	2013-05-02 16:50:28.304718
+4	2	7	t	2013-05-02 16:52:08.320895
+10	2	20	t	2013-05-02 18:06:03.984702
+3	2	5	t	2013-05-02 18:06:23.917288
+11	2	26	t	2013-05-02 18:09:08.526543
+9	2	23	t	2013-05-09 14:06:57.517134
+\.
+
+
+--
+-- Data for Name: forum_subscriptionsettings; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_subscriptionsettings (id, questions_viewed, notify_comments, new_question, all_questions, new_question_watched_tags, notify_comments_own_post, subscribed_questions, notify_reply_to_comments, member_joins, user_id, notify_answers, enable_notifications, all_questions_watched_tags, notify_accepted, send_digest) FROM stdin;
+1	f	f	n	f	i	t	i	t	n	3	t	t	f	f	t
+2	f	f	n	f	i	t	i	t	n	4	t	t	f	f	t
+\.
+
+
+--
+-- Data for Name: forum_tag; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_tag (id, name, created_by_id, created_at, used_count) FROM stdin;
+1	amazon	2	2013-01-25 16:51:31.891834	1
+2	user	2	2013-01-25 16:51:31.955682	1
+3	permission	2	2013-01-25 16:51:31.985185	1
+5	instance	2	2013-01-25 16:51:32.044734	1
+7	tools	2	2013-01-31 17:52:09.095934	1
+8	installation	2	2013-01-31 17:52:09.186295	1
+9	fabric	2	2013-01-31 18:19:20.512377	1
+10	python	2	2013-01-31 18:19:20.544016	1
+6	viral	2	2013-01-31 17:52:08.615451	2
+4	galaxy	2	2013-01-25 16:51:32.012147	4
+12	project	3	2013-02-12 17:19:41.379175	3
+11	cloud	3	2013-02-12 17:19:41.345686	3
+\.
+
+
+--
+-- Data for Name: forum_user; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_user (user_ptr_id, is_approved, email_isvalid, reputation, gold, silver, bronze, last_seen, real_name, website, location, date_of_birth, about) FROM stdin;
+2	f	f	1	0	0	1	2013-01-25 16:51:31.125497				1990-01-01	
+3	f	t	1	0	0	1	2013-02-12 17:17:32.28611	Ntino Krampis	http://www.jcvi.org/cms/about/bios/kkrampis		1990-01-01	
+4	f	t	1	0	0	0	2013-02-20 17:02:36.442667				\N	
+\.
+
+
+--
+-- Data for Name: forum_userproperty; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_userproperty (id, user_id, key, value) FROM stdin;
+3	4	pagination	eJzTSCkw5ApWDwx1DQ7x9PcLjvfxDA5R5yow4tJIKTDmKtYDAJlVCM8=
+2	2	pagination	eJzTSCkw5ApWd/QLDncNivfxDA5R5yow4tJIKTDmKg5WDw12DQqGCZuAhE1hwvGoesxAkuYgSUcXX0+/+CBXZ1e/kHhH5xDPMM+QSKAKC5AKS7j2wFDX4BBPfz+YAYYGIHlDQ5ACmBzcakOwkwzBbgpxdIcLg51kCHSTHgCfljY9
+1	3	pagination	eJzTSCkw5ApWd/QLDncNivfxDA5R5yow4tJIKTDmKg5WDw12DQqGCZuAhE1hwvGoesxAkuYgSUcXX0+/+CBXZ1e/kHhH5xDPMM+QSKAKC5AKS7j2wFDX4BBPfz+YAYYGIHlDQ5ACmBzcakOwkwzBbgpxdIcLg51kCHSTHgCfljY9
+\.
+
+
+--
+-- Data for Name: forum_validationhash; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_validationhash (id, hash_code, seed, expiration, type, user_id) FROM stdin;
+5	805445a1c7b3e60b80c34b8655f4b166	XUcCbv7etiMx	2013-02-21 17:01:02.057248	email	2
+\.
+
+
+--
+-- Data for Name: forum_vote; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY forum_vote (id, node_id, action_id, value, user_id, voted_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: south_migrationhistory; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY south_migrationhistory (id, app_name, migration, applied) FROM stdin;
+1	forum	0001_initial	2013-01-24 06:52:06.479934
+2	forum	0002_auto__add_likedcomment__del_field_repute_positive__del_field_repute_ne	2013-01-24 06:52:06.504317
+3	forum	0003_repute_changes	2013-01-24 06:52:06.533073
+4	forum	0004_auto__del_field_repute_negative__del_field_repute_positive__del_field_	2013-01-24 06:52:06.556287
+5	forum	0005_fill_accepted_by_field	2013-01-24 06:52:06.592965
+6	forum	0006_auto__add_node__add_field_vote_node__add_field_comment_node__add_field	2013-01-24 06:52:06.624232
+7	forum	0007_q_and_a_to_node	2013-01-24 06:52:06.650261
+8	forum	0008_auto__add_noderevision__del_field_vote_object_id__del_field_vote_conte	2013-01-24 06:52:06.665064
+9	forum	0009_convert_revisions	2013-01-24 06:52:06.695887
+10	forum	0010_auto__del_questionrevision__del_answerrevision__del_field_answer_vote_	2013-01-24 06:52:06.713863
+11	forum	0011_auto__add_field_node_active_revision	2013-01-24 06:52:06.732112
+12	forum	0012_set_active_revision	2013-01-24 06:52:06.765193
+13	forum	0013_auto__del_anonymousquestion__del_anonymousanswer__add_anonymousnode	2013-01-24 06:52:06.795663
+14	forum	0014_auto__add_field_question_accepted_answer	2013-01-24 06:52:06.829724
+15	forum	0015_accepted_answer_changes	2013-01-24 06:52:06.851543
+16	forum	0016_auto__del_field_question_answer_accepted__chg_field_question_node_ptr	2013-01-24 06:52:06.877883
+17	forum	0017_auto__add_field_repute_node__add_field_repute_canceled	2013-01-24 06:52:06.923308
+18	forum	0018_comments_to_node	2013-01-24 06:52:06.976867
+19	forum	0019_auto__del_likedcomment__del_comment__add_field_node_abs_parent__chg_fi	2013-01-24 06:52:07.00431
+20	forum	0020_create_absolute_parents	2013-01-24 06:52:07.02999
+21	forum	0021_create_new_pg_fts_triggers	2013-01-24 06:52:07.065497
+22	forum	0022_auto__add_actionrepute__add_action__add_favoritenode__del_field_node_v	2013-01-24 06:52:07.088248
+23	forum	0023_flaten_node_inheritance_create_actions	2013-01-24 06:52:07.104634
+24	forum	0024_auto__del_repute__del_vote__del_answer__del_flaggeditem__del_anonymous	2013-01-24 06:52:07.12276
+25	forum	0025_auto__add_field_node_extra_action__add_field_node_deleted__add_field_n	2013-01-24 06:52:07.151267
+26	forum	0026_reset_deleted_and_lastedited_flags	2013-01-24 06:52:07.207999
+27	forum	0027_auto__del_activity	2013-01-24 06:52:07.23062
+28	forum	0028_auto__add_field_action_canceled_ip__add_field_actionrepute_date	2013-01-24 06:52:07.251033
+29	forum	0029_repute_dates	2013-01-24 06:52:07.281993
+30	forum	0030_auto__chg_field_action_extra__chg_field_keyvalue_value	2013-01-24 06:52:07.307399
+31	forum	0031_alter_pickle_storage	2013-01-24 06:52:07.326237
+32	forum	0032_auto__del_field_user_hide_ignored_questions__del_field_user_questions_	2013-01-24 06:52:07.356309
+33	forum	0033_auto__add_flag__add_vote__add_field_badge_cls__del_unique_badge_type_n	2013-01-24 06:52:07.373671
+34	forum	0034_new_badge_and_award	2013-01-24 06:52:07.392736
+35	forum	0035_auto__del_field_award_object_id__del_field_award_content_type__add_uni	2013-01-24 06:52:07.412204
+36	forum	0036_auto__add_nodestate__chg_field_award_action__add_field_node_state_stri	2013-01-24 06:52:07.432014
+37	forum	0037_fill_node_state	2013-01-24 06:52:07.481142
+38	forum	0038_auto__del_field_node_wiki__del_field_node_deleted__del_field_node_extr	2013-01-24 06:52:07.504631
+39	forum	0039_auto__del_field_tag_deleted__del_field_tag_deleted_by__del_field_tag_d	2013-01-24 06:52:07.565834
+40	forum	0040_auto__chg_field_nodestate_action__add_field_node_extra	2013-01-24 06:52:07.598374
+41	forum	0041_action_ip_fixes	2013-01-24 06:52:07.629007
+42	forum	0042_auto__add_userproperty	2013-01-24 06:52:07.643992
+43	forum	0043_auto__add_field_subscriptionsettings_send_digest__add_field_action_rea	2013-01-24 06:52:07.667959
+44	forum	0044_markdown_cache_migration	2013-01-24 06:52:07.693315
+45	forum	0045_auto__add_openidassociation__add_openidnonce__add_field_tag_created_at	2013-01-24 06:52:07.726559
+46	forum	0046_set_tag_dates	2013-01-24 06:52:07.755587
+47	forum	0047_auto__del_field_subscriptionsettings_questions_asked__del_field_subscr	2013-01-24 06:52:07.793734
+48	forum	0048_zero_count_tags_fix	2013-01-24 06:52:07.811854
+\.
+
+
+--
+-- Name: auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group
+    ADD CONSTRAINT auth_group_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_message_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_message
+    ADD CONSTRAINT auth_message_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_permission_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_groups
+    ADD CONSTRAINT auth_user_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user
+    ADD CONSTRAINT auth_user_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT django_admin_log_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY django_content_type
+    ADD CONSTRAINT django_content_type_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY django_session
+    ADD CONSTRAINT django_session_pkey PRIMARY KEY (session_key);
+
+
+--
+-- Name: django_site_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY django_site
+    ADD CONSTRAINT django_site_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_action_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_action
+    ADD CONSTRAINT forum_action_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_actionrepute_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_actionrepute
+    ADD CONSTRAINT forum_actionrepute_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_authkeyuserassociation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_authkeyuserassociation
+    ADD CONSTRAINT forum_authkeyuserassociation_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_award_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_award
+    ADD CONSTRAINT forum_award_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_badge_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_badge
+    ADD CONSTRAINT forum_badge_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_flag_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_flag
+    ADD CONSTRAINT forum_flag_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_keyvalue_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_keyvalue
+    ADD CONSTRAINT forum_keyvalue_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_markedtag_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_markedtag
+    ADD CONSTRAINT forum_markedtag_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_node_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_node
+    ADD CONSTRAINT forum_node_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_node_tags_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_node_tags
+    ADD CONSTRAINT forum_node_tags_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_noderevision_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_noderevision
+    ADD CONSTRAINT forum_noderevision_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_nodestate_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_nodestate
+    ADD CONSTRAINT forum_nodestate_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_openidassociation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_openidassociation
+    ADD CONSTRAINT forum_openidassociation_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_openidnonce_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_openidnonce
+    ADD CONSTRAINT forum_openidnonce_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_questionsubscription_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_questionsubscription
+    ADD CONSTRAINT forum_questionsubscription_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_subscriptionsettings_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_subscriptionsettings
+    ADD CONSTRAINT forum_subscriptionsettings_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_tag
+    ADD CONSTRAINT forum_tag_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_user
+    ADD CONSTRAINT forum_user_pkey PRIMARY KEY (user_ptr_id);
+
+
+--
+-- Name: forum_userproperty_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_userproperty
+    ADD CONSTRAINT forum_userproperty_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_validationhash_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_validationhash
+    ADD CONSTRAINT forum_validationhash_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: forum_vote_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY forum_vote
+    ADD CONSTRAINT forum_vote_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: south_migrationhistory_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY south_migrationhistory
+    ADD CONSTRAINT south_migrationhistory_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group_name_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX auth_group_name_key ON auth_group USING btree (name);
+
+
+--
+-- Name: auth_group_permissions_group_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX auth_group_permissions_group_id ON auth_group_permissions USING btree (group_id);
+
+
+--
+-- Name: auth_group_permissions_group_id_permission_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX auth_group_permissions_group_id_permission_id_key ON auth_group_permissions USING btree (group_id, permission_id);
+
+
+--
+-- Name: auth_group_permissions_permission_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX auth_group_permissions_permission_id ON auth_group_permissions USING btree (permission_id);
+
+
+--
+-- Name: auth_message_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX auth_message_user_id ON auth_message USING btree (user_id);
+
+
+--
+-- Name: auth_permission_content_type_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX auth_permission_content_type_id ON auth_permission USING btree (content_type_id);
+
+
+--
+-- Name: auth_permission_content_type_id_codename_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX auth_permission_content_type_id_codename_key ON auth_permission USING btree (content_type_id, codename);
+
+
+--
+-- Name: auth_user_groups_group_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX auth_user_groups_group_id ON auth_user_groups USING btree (group_id);
+
+
+--
+-- Name: auth_user_groups_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX auth_user_groups_user_id ON auth_user_groups USING btree (user_id);
+
+
+--
+-- Name: auth_user_groups_user_id_group_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX auth_user_groups_user_id_group_id_key ON auth_user_groups USING btree (user_id, group_id);
+
+
+--
+-- Name: auth_user_user_permissions_permission_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX auth_user_user_permissions_permission_id ON auth_user_user_permissions USING btree (permission_id);
+
+
+--
+-- Name: auth_user_user_permissions_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX auth_user_user_permissions_user_id ON auth_user_user_permissions USING btree (user_id);
+
+
+--
+-- Name: auth_user_user_permissions_user_id_permission_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX auth_user_user_permissions_user_id_permission_id_key ON auth_user_user_permissions USING btree (user_id, permission_id);
+
+
+--
+-- Name: auth_user_username_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX auth_user_username_key ON auth_user USING btree (username);
+
+
+--
+-- Name: django_admin_log_content_type_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX django_admin_log_content_type_id ON django_admin_log USING btree (content_type_id);
+
+
+--
+-- Name: django_admin_log_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX django_admin_log_user_id ON django_admin_log USING btree (user_id);
+
+
+--
+-- Name: django_content_type_app_label_model_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX django_content_type_app_label_model_key ON django_content_type USING btree (app_label, model);
+
+
+--
+-- Name: django_session_expire_date; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX django_session_expire_date ON django_session USING btree (expire_date);
+
+
+--
+-- Name: forum_action_canceled_by_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_action_canceled_by_id ON forum_action USING btree (canceled_by_id);
+
+
+--
+-- Name: forum_action_node_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_action_node_id ON forum_action USING btree (node_id);
+
+
+--
+-- Name: forum_action_real_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_action_real_user_id ON forum_action USING btree (real_user_id);
+
+
+--
+-- Name: forum_action_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_action_user_id ON forum_action USING btree (user_id);
+
+
+--
+-- Name: forum_award_action_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_award_action_id_key ON forum_award USING btree (action_id);
+
+
+--
+-- Name: forum_award_badge_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_award_badge_id ON forum_award USING btree (badge_id);
+
+
+--
+-- Name: forum_award_node_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_award_node_id ON forum_award USING btree (node_id);
+
+
+--
+-- Name: forum_award_trigger_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_award_trigger_id ON forum_award USING btree (trigger_id);
+
+
+--
+-- Name: forum_award_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_award_user_id ON forum_award USING btree (user_id);
+
+
+--
+-- Name: forum_award_user_id_badge_id_node_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_award_user_id_badge_id_node_id_key ON forum_award USING btree (user_id, badge_id, node_id);
+
+
+--
+-- Name: forum_flag_action_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_flag_action_id_key ON forum_flag USING btree (action_id);
+
+
+--
+-- Name: forum_flag_node_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_flag_node_id ON forum_flag USING btree (node_id);
+
+
+--
+-- Name: forum_flag_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_flag_user_id ON forum_flag USING btree (user_id);
+
+
+--
+-- Name: forum_flag_user_id_node_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_flag_user_id_node_id_key ON forum_flag USING btree (user_id, node_id);
+
+
+--
+-- Name: forum_markedtag_tag_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_markedtag_tag_id ON forum_markedtag USING btree (tag_id);
+
+
+--
+-- Name: forum_markedtag_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_markedtag_user_id ON forum_markedtag USING btree (user_id);
+
+
+--
+-- Name: forum_node_abs_parent_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_node_abs_parent_id ON forum_node USING btree (abs_parent_id);
+
+
+--
+-- Name: forum_node_active_revision_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_node_active_revision_id_key ON forum_node USING btree (active_revision_id);
+
+
+--
+-- Name: forum_node_author_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_node_author_id ON forum_node USING btree (author_id);
+
+
+--
+-- Name: forum_node_extra_ref_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_node_extra_ref_id ON forum_node USING btree (extra_ref_id);
+
+
+--
+-- Name: forum_node_last_activity_by_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_node_last_activity_by_id ON forum_node USING btree (last_activity_by_id);
+
+
+--
+-- Name: forum_node_last_edited_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_node_last_edited_id_key ON forum_node USING btree (last_edited_id);
+
+
+--
+-- Name: forum_node_parent_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_node_parent_id ON forum_node USING btree (parent_id);
+
+
+--
+-- Name: forum_nodestate_action_id_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_nodestate_action_id_key ON forum_nodestate USING btree (action_id);
+
+
+--
+-- Name: forum_nodestate_node_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_nodestate_node_id ON forum_nodestate USING btree (node_id);
+
+
+--
+-- Name: forum_nodestate_node_id_state_type_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_nodestate_node_id_state_type_key ON forum_nodestate USING btree (node_id, state_type);
+
+
+--
+-- Name: forum_questionsubscription_question_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_questionsubscription_question_id ON forum_questionsubscription USING btree (question_id);
+
+
+--
+-- Name: forum_questionsubscription_user_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_questionsubscription_user_id ON forum_questionsubscription USING btree (user_id);
+
+
+--
+-- Name: forum_tag_created_by_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX forum_tag_created_by_id ON forum_tag USING btree (created_by_id);
+
+
+--
+-- Name: forum_tag_name_key; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX forum_tag_name_key ON forum_tag USING btree (name);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

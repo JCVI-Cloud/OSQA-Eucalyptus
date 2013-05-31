@@ -1,0 +1,3177 @@
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 16:51:20,134 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9f761b0>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb9dfb250>
+		REMOTE_PORT: 4252
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb9dfe890>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 16:51:25,119 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9dfb688>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb92be6b0>
+		REMOTE_PORT: 4255
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb9f6d6e0>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 16:51:56,445 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9f7f7a0>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb9297160>
+		REMOTE_PORT: 4260
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb9f6d6e0>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 16:58:00,316 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/23/a-typical-run-of-vcr-on-galaxy
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/23/a-typical-run-of-vcr-on-galaxy
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/ask/
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/23/a-typical-run-of-vcr-on-galaxy
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xba0d8fc0>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/23/a-typical-run-of-vcr-on-galaxy
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb92cf250>
+		REMOTE_PORT: 4376
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb9f752a8>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 55, in __call__
+		    res = self._callable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 30, in <lambda>
+		    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+		  File "/var/www/osqa/forum_modules/exporter/mappings.py", line 27, in match_question_slug
+		    return origin(request, id, slug, answer)
+		  File "/var/www/osqa/forum/views/readers.py", line 326, in question
+		    update_question_view_times(request, question)
+		  File "/var/www/osqa/forum/views/readers.py", line 245, in update_question_view_times
+		    QuestionViewAction(question, request.user, ip=request.META['REMOTE_ADDR']).save()
+		  File "/var/www/osqa/forum/models/action.py", line 273, in save
+		    hook(self, True)
+		  File "/var/www/osqa/forum/subscriptions.py", line 142, in question_viewed
+		    if action.viewuser.subscription_settings.questions_viewed:
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 226, in __get__
+		    rel_obj = self.related.model._base_manager.using(db).get(**params)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: SubscriptionSettings matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 16:58:21,399 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xba009f70>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xba0094f8>
+		REMOTE_PORT: 4383
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb9f341d0>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 16:58:25,770 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9ec64a8>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xba070598>
+		REMOTE_PORT: 4393
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb92d4ad0>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 16:58:32,855 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb92be2a0>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb9f272f0>
+		REMOTE_PORT: 4395
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb92d82f0>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 18:03:05,276 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/20/cloud-computing-technology-used-for-the-viral-genomics-cloud-resource-vcr
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        		page: 1
+
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/20/cloud-computing-technology-used-for-the-viral-genomics-cloud-resource-vcr
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: page=1
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/20/cloud-computing-technology-used-for-the-viral-genomics-cloud-resource-vcr
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/20/cloud-computing-technology-used-for-the-viral-genomics-cloud-resource-vcr
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb929dc50>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/20/cloud-computing-technology-used-for-the-viral-genomics-cloud-resource-vcr?page=1
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb9339408>
+		REMOTE_PORT: 1990
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xba039338>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 55, in __call__
+		    res = self._callable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 30, in <lambda>
+		    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+		  File "/var/www/osqa/forum_modules/exporter/mappings.py", line 27, in match_question_slug
+		    return origin(request, id, slug, answer)
+		  File "/var/www/osqa/forum/views/readers.py", line 326, in question
+		    update_question_view_times(request, question)
+		  File "/var/www/osqa/forum/views/readers.py", line 245, in update_question_view_times
+		    QuestionViewAction(question, request.user, ip=request.META['REMOTE_ADDR']).save()
+		  File "/var/www/osqa/forum/models/action.py", line 273, in save
+		    hook(self, True)
+		  File "/var/www/osqa/forum/subscriptions.py", line 142, in question_viewed
+		    if action.viewuser.subscription_settings.questions_viewed:
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 226, in __get__
+		    rel_obj = self.related.model._base_manager.using(db).get(**params)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: SubscriptionSettings matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 18:03:47,578 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb929dcf0>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb929dc50>
+		REMOTE_PORT: 1995
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xba039d10>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 18:03:50,682 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9272d18>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xba070598>
+		REMOTE_PORT: 2007
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xba039458>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 18:06:54,715 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/5/edit/
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/5/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/5/how-are-new-tools-added-to-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/5/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9f7f7a0>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/5/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xba036610>
+		REMOTE_PORT: 2040
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xba039b18>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-02 18:07:28,519 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/26/what-tools-does-the-vcr-project-offer
+        USER: rsanka (2)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=d1d5e444bf867965ab2299367b8301b1
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/26/what-tools-does-the-vcr-project-offer
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_USER_AGENT: Mozilla/5.0 (Windows NT 5.1; rv:20.0) Gecko/20100101 Firefox/20.0
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/ask/
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.17.133.12
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/26/what-tools-does-the-vcr-project-offer
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb92bee08>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/26/what-tools-does-the-vcr-project-offer
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb92be6d8>
+		REMOTE_PORT: 2045
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.5
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb927d140>
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		sessionid: d1d5e444bf867965ab2299367b8301b1
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 55, in __call__
+		    res = self._callable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 30, in <lambda>
+		    self._callable = lambda *args, **kwargs: fn(origin, *args, **kwargs)
+		  File "/var/www/osqa/forum_modules/exporter/mappings.py", line 27, in match_question_slug
+		    return origin(request, id, slug, answer)
+		  File "/var/www/osqa/forum/views/readers.py", line 326, in question
+		    update_question_view_times(request, question)
+		  File "/var/www/osqa/forum/views/readers.py", line 245, in update_question_view_times
+		    QuestionViewAction(question, request.user, ip=request.META['REMOTE_ADDR']).save()
+		  File "/var/www/osqa/forum/models/action.py", line 273, in save
+		    hook(self, True)
+		  File "/var/www/osqa/forum/subscriptions.py", line 142, in question_viewed
+		    if action.viewuser.subscription_settings.questions_viewed:
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 226, in __get__
+		    rel_obj = self.related.model._base_manager.using(db).get(**params)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: SubscriptionSettings matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-29 15:15:04,688 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=2f1b401525f01c27a71762298b9f9495
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.18.5.68
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9f56f20>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb9f3cea8>
+		REMOTE_PORT: 54479
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb4602c38>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: 2f1b401525f01c27a71762298b9f9495
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-29 15:15:10,282 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /answers/4/edit/
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=2f1b401525f01c27a71762298b9f9495
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /answers/4/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.18.5.68
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/answers/4/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xba046110>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /answers/4/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xba046e08>
+		REMOTE_PORT: 54482
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb9f89770>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: 2f1b401525f01c27a71762298b9f9495
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 224, in edit_answer
+		    revision_form = RevisionForm(answer)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-29 16:45:23,198 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/3/edit/
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=2f1b401525f01c27a71762298b9f9495
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/3/edit/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/questions/3/what-is-galaxy
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.18.5.146
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/3/edit/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xba01cdb8>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/3/edit/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb9f7a868>
+		REMOTE_PORT: 55711
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xba052728>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: 2f1b401525f01c27a71762298b9f9495
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/writers.py", line 130, in edit_question
+		    return _edit_question(request, question)
+		  File "/var/www/osqa/forum/views/writers.py", line 181, in _edit_question
+		    revision_form = RevisionForm(question)
+		  File "/var/www/osqa/forum/forms/qanda.py", line 219, in __init__
+		    self.fields['revision'].initial = post.active_revision.revision
+		  File "/usr/lib/pymodules/python2.6/django/db/models/fields/related.py", line 300, in __get__
+		    rel_obj = rel_mgr.using(db).get(**params)
+		  File "/var/www/osqa/forum/models/base.py", line 64, in get
+		    obj = super(CachedQuerySet, self).get(*args, **kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/db/models/query.py", line 341, in get
+		    % self.model._meta.object_name)
+		DoesNotExist: NodeRevision matching query does not exist.
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-29 16:47:29,543 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /admin/tools/exporter/
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=2f1b401525f01c27a71762298b9f9495
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /admin/tools/exporter/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/admin/settings/about/
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.18.5.146
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/admin/tools/exporter/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xba03d4f8>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /admin/tools/exporter/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb92a5728>
+		REMOTE_PORT: 55775
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xba052bf0>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: 2f1b401525f01c27a71762298b9f9495
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/admin.py", line 28, in wrapper
+		    return fn(request, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/admin.py", line 37, in wrapper
+		    res = fn(request, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/admin.py", line 132, in tools_page
+		    return TOOLS[name](request)
+		  File "/var/www/osqa/forum/views/admin.py", line 28, in wrapper
+		    return fn(request, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/admin.py", line 37, in wrapper
+		    res = fn(request, *args, **kwargs)
+		  File "/var/www/osqa/forum_modules/exporter/views.py", line 43, in exporter
+		    for f in os.listdir(folder):
+		OSError: [Errno 2] No such file or directory: '/app/osqa/forum_modules/exporter/backups'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-29 16:48:29,636 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /admin/tools/exporter/
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=2f1b401525f01c27a71762298b9f9495
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.104 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /admin/tools/exporter/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.104/admin/tools/nodeman/?sort=added_at_asc
+		SERVER_NAME: 172.17.31.104
+		REMOTE_ADDR: 172.18.5.146
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/admin/tools/exporter/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.122
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xba046e08>
+		HTTP_HOST: 172.17.31.104
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /admin/tools/exporter/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xba0469a8>
+		REMOTE_PORT: 55783
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xba07cad0>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: 2f1b401525f01c27a71762298b9f9495
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/views/admin.py", line 28, in wrapper
+		    return fn(request, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/admin.py", line 37, in wrapper
+		    res = fn(request, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/admin.py", line 132, in tools_page
+		    return TOOLS[name](request)
+		  File "/var/www/osqa/forum/views/admin.py", line 28, in wrapper
+		    return fn(request, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/admin.py", line 37, in wrapper
+		    res = fn(request, *args, **kwargs)
+		  File "/var/www/osqa/forum_modules/exporter/views.py", line 43, in exporter
+		    for f in os.listdir(folder):
+		OSError: [Errno 2] No such file or directory: '/app/osqa/forum_modules/exporter/backups'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:31:37,957 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.103/admin/settings/css/
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9522278>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb95222c8>
+		REMOTE_PORT: 51507
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb6e7bc38>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 924, in load
+		    lib = get_library(taglib)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 1040, in get_library
+		    lib = import_library(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 987, in import_library
+		    mod = import_module(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 263, in parse
+		    filter_expression = self.compile_filter(token.contents)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 357, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 540, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 363, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'cnprog_intword'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:31:41,881 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.103/admin/settings/css/
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xba17b318>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xba17b818>
+		REMOTE_PORT: 51510
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xba171de8>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 924, in load
+		    lib = get_library(taglib)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 1040, in get_library
+		    lib = import_library(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 987, in import_library
+		    mod = import_module(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 263, in parse
+		    filter_expression = self.compile_filter(token.contents)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 357, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 540, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 363, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'cnprog_intword'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:32:10,325 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.103/admin/settings/css/
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xba110ed0>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb9f6ad18>
+		REMOTE_PORT: 51521
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb6e7bc38>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 924, in load
+		    lib = get_library(taglib)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 1040, in get_library
+		    lib = import_library(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 987, in import_library
+		    mod = import_module(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 263, in parse
+		    filter_expression = self.compile_filter(token.contents)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 357, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 540, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 363, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'cnprog_intword'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:32:14,293 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb9e081d8>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb9e08098>
+		REMOTE_PORT: 51523
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb461bc38>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 924, in load
+		    lib = get_library(taglib)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 1040, in get_library
+		    lib = import_library(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 987, in import_library
+		    mod = import_module(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 263, in parse
+		    filter_expression = self.compile_filter(token.contents)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 357, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 540, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 363, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'cnprog_intword'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:36:31,718 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb8057278>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb80572c8>
+		REMOTE_PORT: 51601
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb6f17c38>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 924, in load
+		    lib = get_library(taglib)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 1040, in get_library
+		    lib = import_library(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 987, in import_library
+		    mod = import_module(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 263, in parse
+		    filter_expression = self.compile_filter(token.contents)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 357, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 540, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 363, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'cnprog_intword'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:36:43,345 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.103/
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb8bc2f98>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb8bc2b88>
+		REMOTE_PORT: 51606
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb8cc4bf0>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 924, in load
+		    lib = get_library(taglib)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 1040, in get_library
+		    lib = import_library(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 987, in import_library
+		    mod = import_module(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 263, in parse
+		    filter_expression = self.compile_filter(token.contents)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 357, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 540, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 363, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'cnprog_intword'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:36:45,261 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.103/
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb8a87e80>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb8048d18>
+		REMOTE_PORT: 51602
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb8930da0>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 924, in load
+		    lib = get_library(taglib)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 1040, in get_library
+		    lib = import_library(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 987, in import_library
+		    mod = import_module(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 263, in parse
+		    filter_expression = self.compile_filter(token.contents)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 357, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 540, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 363, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'cnprog_intword'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:36:47,077 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /tags/
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /tags/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.103/questions/
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/tags/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb893c4a8>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /tags/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb8939318>
+		REMOTE_PORT: 51605
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb8ca59f8>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 175, in do_block
+		    nodelist = parser.parse(('endblock', 'endblock %s' % block_name))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 280, in parse
+		    self.invalid_block_tag(token, command, parse_until)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 333, in invalid_block_tag
+		    raise self.error(token, "Invalid block tag: '%s', expected %s" % (command, get_text_list(["'%s'" % p for p in parse_until])))
+		TemplateSyntaxError: Invalid block tag: 'cnprog_paginator', expected 'endblock' or 'endblock tail'
+		
+
+        
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:36:48,409 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /questions/
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		HTTP_REFERER: http://172.17.31.103/tags/
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/questions/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb8bb1d18>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /questions/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb88c28e0>
+		REMOTE_PORT: 51617
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb8ca5d10>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 181, in render_to_string
+		    t = get_template(template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 197, in do_extends
+		    nodelist = parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 924, in load
+		    lib = get_library(taglib)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 1040, in get_library
+		    lib = import_library(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 987, in import_library
+		    mod = import_module(taglib_module)
+		  File "/usr/lib/pymodules/python2.6/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/var/www/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 263, in parse
+		    filter_expression = self.compile_filter(token.contents)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 357, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 540, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 363, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'cnprog_intword'
+		
+
+        
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 15:45:36,868 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:45:37,128 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb8385278>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb83852c8>
+		REMOTE_PORT: 51827
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		CSRF_COOKIE_USED: True
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb6ea5c38>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 186, in render_to_string
+		    return t.render(context_instance)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 173, in render
+		    return self._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 961, in render
+		    t = get_template(file_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 694, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 829, in do_if
+		    nodelist_true = parser.parse(('else', 'endif'))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 280, in parse
+		    self.invalid_block_tag(token, command, parse_until)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 333, in invalid_block_tag
+		    raise self.error(token, "Invalid block tag: '%s', expected %s" % (command, get_text_list(["'%s'" % p for p in parse_until])))
+		TemplateSyntaxError: Invalid block tag: 'get_tag_font_size', expected 'else' or 'endif'
+		
+
+        
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 15:45:37,152 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 15:45:43,240 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:45:43,420 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb8fad4f8>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb8fcd638>
+		REMOTE_PORT: 51829
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		CSRF_COOKIE_USED: True
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb8ee4968>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 186, in render_to_string
+		    return t.render(context_instance)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 173, in render
+		    return self._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 961, in render
+		    t = get_template(file_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 694, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 829, in do_if
+		    nodelist_true = parser.parse(('else', 'endif'))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 280, in parse
+		    self.invalid_block_tag(token, command, parse_until)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 333, in invalid_block_tag
+		    raise self.error(token, "Invalid block tag: '%s', expected %s" % (command, get_text_list(["'%s'" % p for p in parse_until])))
+		TemplateSyntaxError: Invalid block tag: 'get_tag_font_size', expected 'else' or 'endif'
+		
+
+        
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 15:45:43,440 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 15:52:58,673 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 15:52:58,901 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb8c694f8>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb83855c0>
+		REMOTE_PORT: 51923
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		CSRF_COOKIE_USED: True
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb8c63da0>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 186, in render_to_string
+		    return t.render(context_instance)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 173, in render
+		    return self._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 961, in render
+		    t = get_template(file_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 694, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 829, in do_if
+		    nodelist_true = parser.parse(('else', 'endif'))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 280, in parse
+		    self.invalid_block_tag(token, command, parse_until)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 333, in invalid_block_tag
+		    raise self.error(token, "Invalid block tag: '%s', expected %s" % (command, get_text_list(["'%s'" % p for p in parse_until])))
+		TemplateSyntaxError: Invalid block tag: 'get_tag_font_size', expected 'else' or 'endif'
+		
+
+        
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 15:52:58,927 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:06:56,162 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 16:06:56,400 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb825a278>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb825a2c8>
+		REMOTE_PORT: 52120
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		CSRF_COOKIE_USED: True
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb6ed9c38>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 186, in render_to_string
+		    return t.render(context_instance)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 173, in render
+		    return self._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 961, in render
+		    t = get_template(file_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 694, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 829, in do_if
+		    nodelist_true = parser.parse(('else', 'endif'))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 280, in parse
+		    self.invalid_block_tag(token, command, parse_until)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 333, in invalid_block_tag
+		    raise self.error(token, "Invalid block tag: '%s', expected %s" % (command, get_text_list(["'%s'" % p for p in parse_until])))
+		TemplateSyntaxError: Invalid block tag: 'get_tag_font_size', expected 'else' or 'endif'
+		
+
+        
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:06:56,425 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:02,196 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:18,817 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/views/meta.py TIME: 2013-05-30 16:07:19,043 MSG: meta.py:error_handler:200 
+        error executing request:
+        PATH: /
+        USER: agbiotec (3)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: sessionid=acd95261e51337a230dd9b5b520c942e
+		mod_wsgi.listener_host: 
+		SERVER_SOFTWARE: Apache/2.2.16 (Debian)
+		SCRIPT_NAME: 
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: <address>Apache/2.2.16 (Debian) Server at 172.17.31.103 Port 80</address>
+
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		HTTP_ACCEPT_CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: 172.17.31.103
+		REMOTE_ADDR: 172.18.5.96
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /var/www/osqa/wsgi_handler.py/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 192.168.17.116
+		DOCUMENT_ROOT: /etc/apache2/htdocs
+		mod_wsgi.process_group: django
+		SCRIPT_FILENAME: /var/www/osqa/wsgi_handler.py
+		SERVER_ADMIN: webmaster@localhost
+		wsgi.input: <mod_wsgi.Input object at 0xb8d904a8>
+		HTTP_HOST: 172.17.31.103
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 1)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0xb8e4ea70>
+		REMOTE_PORT: 52124
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		mod_wsgi.version: (3, 3)
+		CSRF_COOKIE_USED: True
+		mod_wsgi.application_group: 127.0.1.1|
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0xb6ed9c38>
+		HTTP_ACCEPT_ENCODING: gzip,deflate,sdch
+
+        COOKIES:
+        		sessionid: acd95261e51337a230dd9b5b520c942e
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/usr/lib/pymodules/python2.6/django/core/handlers/base.py", line 100, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/var/www/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/var/www/osqa/forum/views/decorators.py", line 32, in decorated
+		    context_instance=RequestContext(request))
+		  File "/usr/lib/pymodules/python2.6/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 186, in render_to_string
+		    return t.render(context_instance)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 173, in render
+		    return self._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 125, in render
+		    return compiled_parent._render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 167, in _render
+		    return self.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader_tags.py", line 62, in render
+		    result = block.nodelist.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 796, in render
+		    bits.append(self.render_node(node, context))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 809, in render_node
+		    return node.render(context)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 961, in render
+		    t = get_template(file_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 160, in get_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/usr/lib/pymodules/python2.6/django/template/loader.py", line 168, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 158, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 186, in compile_string
+		    return parser.parse()
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 694, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 282, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/usr/lib/pymodules/python2.6/django/template/defaulttags.py", line 829, in do_if
+		    nodelist_true = parser.parse(('else', 'endif'))
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 280, in parse
+		    self.invalid_block_tag(token, command, parse_until)
+		  File "/usr/lib/pymodules/python2.6/django/template/__init__.py", line 333, in invalid_block_tag
+		    raise self.error(token, "Invalid block tag: '%s', expected %s" % (command, get_text_list(["'%s'" % p for p in parse_until])))
+		TemplateSyntaxError: Invalid block tag: 'get_tag_font_size', expected 'else' or 'endif'
+		
+
+        
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:19,069 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:21,884 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:23,798 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:25,407 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:26,360 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:27,209 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:28,861 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:39,462 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:07:42,474 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:08:00,704 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 16:08:04,400 MSG: __init__.py:find_media_source:147 could not find media for media/iepngfix/iepngfix.htc
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 18:49:50,768 MSG: __init__.py:find_media_source:147 could not find media for media/style/jcvi_favico.png
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 18:49:51,545 MSG: __init__.py:find_media_source:147 could not find media for media/style/jcvi_favico.png
+/var/www/osqa/forum/skins/__init__.py TIME: 2013-05-30 18:49:51,638 MSG: __init__.py:find_media_source:147 could not find media for media/style/jcvi_favico.png
